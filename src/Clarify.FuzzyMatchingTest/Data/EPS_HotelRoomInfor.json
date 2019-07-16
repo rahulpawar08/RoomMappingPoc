@@ -1,0 +1,4346 @@
+{
+  "hotels": [
+    {
+      "clarifyHotelId": "4679",
+      "supplierHotelId": "4215",
+      "rooms": [
+        {
+          "ClarifiRoomId": 1959758,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "200110186",
+          "Name": "Run of House (Assigned at Check-in)",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 Queen Bed</strong></p><p>161 sq feet (15 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Coffee/tea maker and room service </p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone; free rollaway/extra beds and free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0f9da759_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "200110186",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0f9da759_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "200110186",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/bbd4621e_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "200110186",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/43573737_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "200110186",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "200110186",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "QueenBed",
+              "Desc": "1 Queen Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "161 sq feet (15 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.708Z",
+          "ModifiedDate": "2019-06-13T19:05:39.412Z"
+        },
+        {
+
+          "ClarifiRoomId": 1959750,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201488914",
+          "Name": "Superior Room, 1 Queen Bed",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 Queen Bed</strong></p><p>200 sq feet (19 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels and pay movies</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Desk, laptop-compatible safe, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/9055a5ca_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488914",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/9055a5ca_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488914",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/5597dcde_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488914",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/f957dc79_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488914",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488914",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "QueenBed",
+              "Desc": "1 Queen Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "200 sq feet (19 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.645Z",
+          "ModifiedDate": "2019-06-13T19:05:39.365Z"
+        },
+        {
+          "ClarifiRoomId": 1959754,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201488915",
+          "Name": "Superior Room, 1 King Bed",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 King Bed</strong></p><p>200 sq feet (19 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels and pay movies</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Desk, laptop-compatible safe, and iron/ironing board; rollaway/extra beds and free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/d41237f7_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488915",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/d41237f7_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488915",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/326a4e42_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488915",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488915",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/c8a18fb6_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488915",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488915",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "200 sq feet (19 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.676Z",
+          "ModifiedDate": "2019-06-13T19:05:39.396Z"
+        },
+        {
+          "ClarifiRoomId": 1959753,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201488917",
+          "Name": "Superior Room, 2 Double Beds",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>2 Double Beds</strong></p><p>250 sq feet (23 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels and pay movies</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Desk, laptop-compatible safe, and iron/ironing board; free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p><b>Need to Know</b> - No rollaway/extra beds available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Living Area",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/cfd44311_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488917",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Living Area",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/cfd44311_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488917",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488917",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/faaa353b_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488917",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/3aa38533_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488917",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201488917",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "FullBed",
+              "Desc": "2 Double Beds",
+              "Count": 2
+            }
+          ],
+          "SquareFootage": "250 sq feet (23 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.661Z",
+          "ModifiedDate": "2019-06-13T19:05:39.381Z"
+        },
+        {
+          "ClarifiRoomId": 1959761,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201527875",
+          "Name": "Superior Room, 2 Queen Beds",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>2 Queen Beds</strong></p><p>265 sq feet (25 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels and pay movies</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Desk, laptop-compatible safe, and iron/ironing board; free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p><b>Need to Know</b> - No rollaway/extra beds available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/faaa353b_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527875",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/faaa353b_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527875",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527875",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/3aa38533_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527875",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527875",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "QueenBed",
+              "Desc": "2 Queen Beds",
+              "Count": 2
+            }
+          ],
+          "SquareFootage": "265 sq feet (25 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.739Z",
+          "ModifiedDate": "2019-06-13T19:05:39.443Z"
+        },
+        {
+          "ClarifiRoomId": 1959748,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201527877",
+          "Name": "Deluxe Room, 2 Double Beds",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>2 Double Beds</strong></p><p>300 sq feet (28 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone; rollaway/extra beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Need to Know</b> - No cribs (infant beds) available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527877",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527877",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "FullBed",
+              "Desc": "2 Double Beds",
+              "Count": 2
+            }
+          ],
+          "SquareFootage": "300 sq feet (28 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.63Z",
+          "ModifiedDate": "2019-06-13T19:05:39.35Z"
+        },
+        {
+          "ClarifiRoomId": 1959751,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "210301791",
+          "Name": "Presidential Suite",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 King Bed</strong></p><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Coffee/tea maker and room service </p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Need to Know</b> - No cribs (infant beds) or rollaway/extra beds available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/8bff4f2d_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301791",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/8bff4f2d_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301791",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/ed3e00fe_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301791",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/16718b13_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301791",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/6f621f6c_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301791",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": null,
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.645Z",
+          "ModifiedDate": "2019-06-13T19:05:39.381Z"
+        },
+        {
+          "ClarifiRoomId": 1959756,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "210304274",
+          "Name": "Superior Room, 1 Full Bed, Accessible",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 Double Bed</strong></p><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Coffee/tea maker and room service </p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p><b>Need to Know</b> - No cribs (infant beds) or rollaway/extra beds available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/5597dcde_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210304274",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/5597dcde_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210304274",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/f957dc79_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210304274",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/9055a5ca_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210304274",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210304274",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "FullBed",
+              "Desc": "1 Double Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": null,
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.692Z",
+          "ModifiedDate": "2019-06-13T19:05:39.412Z"
+        },
+        {
+          "ClarifiRoomId": 1959760,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201527880",
+          "Name": "Deluxe Room, 1 King Bed",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 King Bed</strong></p><p>280 sq feet (26 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone; rollaway/extra beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Need to Know</b> - No cribs (infant beds) available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/af39a0c6_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527880",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/af39a0c6_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527880",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527880",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/35945d97_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527880",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527880",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "280 sq feet (26 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.723Z",
+          "ModifiedDate": "2019-06-13T19:05:39.428Z"
+        },
+        {
+          "ClarifiRoomId": 1959749,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201527888",
+          "Name": "Studio Suite",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 Queen Bed and 1 Double Sofa Bed or 1 King Bed and 1 Double Sofa Bed</strong></p><p>400 sq feet (37 sq meters)</p><br/><p><b>Layout</b> - Separate sitting area</p><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels and pay movies</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Desk, double sofa bed, and laptop-compatible safe; rollaway/extra beds and free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/995ea799_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527888",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/995ea799_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527888",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527888",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/29d13981_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527888",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527888",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "QueenBed",
+              "Desc": "1 Queen Bed and 1 Double Sofa Bed",
+              "Count": 1
+            },
+            {
+              "Type": "SofaBed",
+              "Desc": "1 Queen Bed and 1 Double Sofa Bed",
+              "Count": 1
+            },
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed and 1 Double Sofa Bed",
+              "Count": 1
+            },
+            {
+              "Type": "SofaBed",
+              "Desc": "1 King Bed and 1 Double Sofa Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "400 sq feet (37 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.645Z",
+          "ModifiedDate": "2019-06-13T19:05:39.365Z"
+        },
+        {
+          "ClarifiRoomId": 1959759,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "201527890",
+          "Name": "Suite, 1 Bedroom",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 King Bed and 1 Double Sofa Bed</strong></p><p>600 sq feet (56 sq meters)</p><br/><p><b>Layout</b> - Bedroom, living room, and sitting area</p><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels and pay movies</p><p><b>Food & Drink</b> - Refrigerator, coffee/tea maker, and room service</p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Sofa bed, desk, and laptop-compatible safe; rollaway/extra beds and free cribs/infant beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Accessibility</b> - Wheelchair accessible</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/d0e9db76_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/d0e9db76_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/35945d97_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/af39a0c6_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/b3d334b9_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/4043c51a_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/a63230bb_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "201527890",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed and 1 Double Sofa Bed",
+              "Count": 1
+            },
+            {
+              "Type": "SofaBed",
+              "Desc": "1 King Bed and 1 Double Sofa Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "600 sq feet (56 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.723Z",
+          "ModifiedDate": "2019-06-13T19:05:39.428Z"
+        },
+        {
+          "ClarifiRoomId": 1959752,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "210300463",
+          "Name": "Superior Room, 1 King Bed, Accessible",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 King Bed</strong></p><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Coffee/tea maker and room service </p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone; rollaway/extra beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Need to Know</b> - No cribs (infant beds) available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/c8a18fb6_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300463",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/c8a18fb6_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300463",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300463",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/f957dc79_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300463",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/04805532_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300463",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": null,
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.661Z",
+          "ModifiedDate": "2019-06-13T19:05:39.381Z"
+        },
+        {
+          "ClarifiRoomId": 1959757,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "210300464",
+          "Name": "Superior Room, 2 Double Beds, Accessible",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>2 Double Beds</strong></p><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Coffee/tea maker and room service </p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone; rollaway/extra beds available on request</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Need to Know</b> - No cribs (infant beds) available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/3aa38533_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300464",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/3aa38533_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300464",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/0c355efc_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300464",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/faaa353b_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300464",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Bathroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/04805532_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210300464",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "FullBed",
+              "Desc": "2 Double Beds",
+              "Count": 2
+            }
+          ],
+          "SquareFootage": null,
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.708Z",
+          "ModifiedDate": "2019-06-13T19:05:39.412Z"
+        },
+        {
+          "ClarifiRoomId": 1959755,
+          "SupplierFamily": "EPSRapid",
+          "SupplierId": "4215",
+          "SupplierRoomId": "210301790",
+          "Name": "Garden Suite",
+          "Descriptions": [
+            {
+              "Type": "Overview",
+              "Value": "<p><strong>1 King Bed</strong></p><p>1400 sq feet (130 sq meters)</p><br/><p><b>Internet</b> - WiFi </p><p><b>Entertainment</b> - 37-inch LED TV with premium channels</p><p><b>Food & Drink</b> - Coffee/tea maker and room service </p><p><b>Sleep</b> - Pillowtop bed, premium bedding, and blackout drapes/curtains </p><p><b>Bathroom</b> - Private bathroom, shower/tub combination, designer toiletries, and a hair dryer</p><p><b>Practical</b> - Laptop-compatible safe, iron/ironing board, and phone</p><p><b>Comfort</b> - Air conditioning and daily housekeeping</p><p><b>Need to Know</b> - No cribs (infant beds) or rollaway/extra beds available</p><p>Non-Smoking</p><p>Connecting/adjoining rooms can be requested, subject to availability </p>&nbsp;"
+            }
+          ],
+          "Images": [
+            {
+              "IsThumbNail": true,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/ec5f14cf_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Thumbnail",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301790",
+              "IsSupplierHeroImage": true
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/ec5f14cf_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301790",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/8d550c02_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301790",
+              "IsSupplierHeroImage": false
+            },
+            {
+              "IsThumbNail": false,
+              "UniqueImageFileName": null,
+              "ImageType": "Room",
+              "ImageCaption": "Guestroom View",
+              "SupplierCode": "EPS",
+              "SupplierImageUrl": "https://i.travelapi.com/hotels/1000000/10000/4300/4215/e60c153c_z.jpg",
+              "IsEnabled": true,
+              "QualityRating": null,
+              "Dimension": "Tiny",
+              "Height": 0,
+              "Width": 0,
+              "VerticalResolution": 0.0,
+              "HorizontalResolution": 0.0,
+              "RoomCode": "210301790",
+              "IsSupplierHeroImage": false
+            }
+          ],
+          "Amenities": [
+            {
+              "Name": "Air conditioning",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "LED TV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Coffee/tea maker",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Connecting/adjoining rooms available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Daily housekeeping",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hypo-allergenic bedding available",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Shower/tub combination",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Phone",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Pillowtop mattress",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Private bathroom",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Free toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Hair dryer",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Iron/ironing board",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 9
+            },
+            {
+              "Name": "Room service (limited hours)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room safe (laptop compatible)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Digital TV service",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "Non-Smoking",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 22
+            },
+            {
+              "Name": "Premium TV channels",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "HDTV",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 12
+            },
+            {
+              "Name": "WiFi (surcharge)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 3
+            },
+            {
+              "Name": "Blackout drapes/curtains",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Designer toiletries",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "In-room climate control (air conditioning)",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            },
+            {
+              "Name": "Premium bedding",
+              "SupplierImageUrl": null,
+              "ImageName": null,
+              "Description": null,
+              "Type": "Room",
+              "AmenityGroupId": 0
+            }
+          ],
+          "BedDetails": [
+            {
+              "Type": "KingBed",
+              "Desc": "1 King Bed",
+              "Count": 1
+            }
+          ],
+          "SquareFootage": "1400 sq feet (130 sq meters)",
+          "RoomViews": [],
+          "SmokingIndicator": null,
+          "IsDisabled": false,
+          "AddedDate": "2019-04-26T03:57:02.676Z",
+          "ModifiedDate": "2019-06-13T19:05:39.396Z"
+        }
+
+      ]
+    }
+  ]
+}
