@@ -19,6 +19,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             RoomId = roomId;
             ClarifiHotelId = clarifiHotelId;
             RoomMatchingScore = new List<MatchResult>();
+            MostMatchedRooms = new List<MostMatchedRoom>();
         }
         public string SupplierName { get; set; }
 
@@ -34,7 +35,13 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
 
         public string FieldsUsedForHighestMatch { get; set; }
 
+        public string EpsMatchingStringForHighestMatch { get; set; }
+
+        public string HBMatchingStringForHighestMatch { get; set; }
+
         public List<MatchResult> RoomMatchingScore { get; set; }
+
+        public List<MostMatchedRoom> MostMatchedRooms { get; set; }
 
         public void SetMatchedRoom()
         {
@@ -42,6 +49,22 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             MostMatchedRoomId = RoomMatchingScore.Last().EPSRoomId;
             HighestMatchedScore = RoomMatchingScore.Last().MatchingScore;
             FieldsUsedForHighestMatch = RoomMatchingScore.Last().MatchingField;
+            EpsMatchingStringForHighestMatch = RoomMatchingScore.Last().EPSMatchingString;
+            HBMatchingStringForHighestMatch = RoomMatchingScore.Last().HotelBedMatchingString;
+
+            var mostMatchedRooms = RoomMatchingScore.FindAll(r => r.MatchingScore >= RoomMatchingScore.Last().MatchingScore);
+            if (mostMatchedRooms != null)
+            {
+                foreach (var room in mostMatchedRooms)
+                {
+                    MostMatchedRooms.Add(new MostMatchedRoom
+                    {
+                        MostMatchedRoomId = room.EPSRoomId,
+                        FieldsUsedForHighestMatch = room.EPSMatchingString,
+                        HighestMatchedScore = room.MatchingScore
+                    });
+                }
+            }
         }
     }
 
@@ -62,5 +85,14 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         {
             return MatchingScore.CompareTo(((MatchResult)obj).MatchingScore);
         }
+    }
+
+    public class MostMatchedRoom
+    {
+        public string MostMatchedRoomId { get; set; }
+
+        public int HighestMatchedScore { get; set; }
+
+        public string FieldsUsedForHighestMatch { get; set; }
     }
 }

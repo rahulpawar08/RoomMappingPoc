@@ -12,9 +12,9 @@ namespace ConsoleApp.FuzzyAlgo
        
         static void Main(string[] args)
         {
-            int expectedMatchingScore = 70;
+            int expectedMatchingScore = 80;
             //Available Fields => SQF: SquareFoot, NM: Name, BD: Bed Details, RV: Room View, DESC: Room Description
-            List<string> matchingFields = new List<string>() { "SQF_NM_BD_RV", "SQF_NM_BD_RV_DESC" }; 
+            List<string> matchingFields = new List<string>() { "SQF_NM_BD_RV" }; 
 
             RoomMappingCore roomMappingCore = new RoomMappingCore();
             roomMappingCore.Initialize();

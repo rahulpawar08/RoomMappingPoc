@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Clarify.FuzzyMatchingTest.Data.Models
@@ -77,13 +78,13 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             strBuilder.Append(SquareFootage);
 
             if (fields.Contains("NM"))
-                strBuilder.Append(Name);
+                strBuilder.Append(" " + Name);
 
             if (fields.Contains("BD"))
             {
                 if (BedDetails != null && BedDetails.Count > 0)
                 {
-                    BedDetails.ForEach(b => strBuilder.Append(b.Desc));
+                    BedDetails.ForEach(b => strBuilder.Append(" " +b.Desc));
                 }
             }
 
@@ -91,7 +92,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             {
                 if (RoomViews != null && RoomViews.Count > 0)
                 {
-                    RoomViews.ForEach(r => strBuilder.Append(r.Value));
+                    RoomViews.ForEach(r => strBuilder.Append(" " + r.Value));
                 }
             }
 
@@ -99,11 +100,21 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             {
                 if (Descriptions != null && Descriptions.Count > 0)
                 {
-                    Descriptions.ForEach(d => strBuilder.Append(d.Value));
+                    Descriptions.ForEach(d => strBuilder.Append(" " + d.Value));
                 }
             }
 
             return strBuilder.ToString();
+        }
+
+        public void UpdateNameIfAccessible()
+        {
+            if(Amenities!=null && Amenities.Count > 0 && !Name.ToLower().Contains("accessible"))
+            {
+                if(Amenities.Any(a=>a.Name.ToLower().Contains("wheelchair")|| a.Name.ToLower().Contains("accessible"))){
+                    Name += ", Accessible";
+                }
+            }
         }
     }
 
