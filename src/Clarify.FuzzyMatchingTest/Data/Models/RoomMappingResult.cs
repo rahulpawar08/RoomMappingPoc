@@ -46,13 +46,13 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public void SetMatchedRoom()
         {
             RoomMatchingScore.Sort();
-            MostMatchedRoomId = RoomMatchingScore.Last().EPSRoomId;
-            HighestMatchedScore = RoomMatchingScore.Last().MatchingScore;
-            FieldsUsedForHighestMatch = RoomMatchingScore.Last().MatchingField;
-            EpsMatchingStringForHighestMatch = RoomMatchingScore.Last().EPSMatchingString;
-            HBMatchingStringForHighestMatch = RoomMatchingScore.Last().HotelBedMatchingString;
+            MostMatchedRoomId = RoomMatchingScore.LastOrDefault()?.EPSRoomId;
+            HighestMatchedScore = RoomMatchingScore.LastOrDefault() == null ? 0 : RoomMatchingScore.LastOrDefault().MatchingScore;
+            FieldsUsedForHighestMatch = RoomMatchingScore.LastOrDefault()?.MatchingField;
+            EpsMatchingStringForHighestMatch = RoomMatchingScore.LastOrDefault()?.EPSMatchingString;
+            HBMatchingStringForHighestMatch = RoomMatchingScore.LastOrDefault()?.HotelBedMatchingString;
 
-            var mostMatchedRooms = RoomMatchingScore.FindAll(r => r.MatchingScore >= RoomMatchingScore.Last().MatchingScore);
+            var mostMatchedRooms = RoomMatchingScore.FindAll(r => r.MatchingScore >= RoomMatchingScore.LastOrDefault()?.MatchingScore);
             if (mostMatchedRooms != null)
             {
                 foreach (var room in mostMatchedRooms)
