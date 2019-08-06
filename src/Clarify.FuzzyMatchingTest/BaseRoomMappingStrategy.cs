@@ -25,6 +25,8 @@ namespace Clarify.FuzzyMatchingTest
         public void Initialize()
         {
             InputFiles = new List<InputFile>();
+            EpsSupplierData = new List<ClarifiModel>();
+            HotelBedSupplierData = new List<ClarifiModel>();
             PopulateInputData();
             PopulateSupplierData();
         }
@@ -52,7 +54,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void PopulateInputData()
         {
-            string[] filePaths = Directory.GetFiles("C:\\Users\\mmose\\Downloads\\ExportedRooms (3)\\ExportedRooms");
+            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input\\");
             foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
             {
                 string[] words = epsFileName.Split('_');
