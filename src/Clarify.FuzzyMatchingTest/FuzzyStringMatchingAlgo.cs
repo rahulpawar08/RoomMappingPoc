@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Clarify.FuzzyMatchingTest
 {
-   public class FuzzyRoomMatchingAlgo : IRoomMatchingAlgo
+   public class FuzzyStringMatchingAlgo : IMatchingAlgorithm
     {
         public int GetMatchingScore(string room1, string room2)
         {

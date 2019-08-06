@@ -9,7 +9,7 @@ namespace Clarify.FuzzyMatchingTest
     {
         void WriteHotelBedsRoomMatching(string fileName, List<RoomMappingResult> result);
 
-        void WriteEPSRoomMatching(string fileName, ClarifiModel epsSupplierData, List<RoomMappingResult> roomMappingResults);
+        void WriteEPSRoomMatching(string fileName, List<EpsMappedRooms> epsMappedRooms);
 
         void WriteRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData);
     }

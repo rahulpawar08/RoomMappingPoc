@@ -8,44 +8,26 @@ using Newtonsoft.Json;
 
 namespace Clarify.FuzzyMatchingTest
 {
-    public class RoomMappingCore
+    public class SingleStringMatchingStrategy : BaseRoomMappingStrategy
     {
-        public RoomMappingCore()
+        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm)
         {
-            RoomMatchingAlgo = new FuzzyRoomMatchingAlgo();
-            DataWriter = new FileWriter();
-
-        }
-        public List<InputFile> InputFiles { get; set; }
-        public ClarifiModel EpsSupplierData { get; set; }
-
-        public ClarifiModel HotelBedSupplierData { get; set; }
-
-        public IRoomMatchingAlgo RoomMatchingAlgo { get; set; }
-
-        public IDataWriter DataWriter { get; set; }
-
-        public void Initialize()
-        {
-            InputFiles = new List<InputFile>();
-            PopulateInputData();
-        }
-
-        public List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields, int threshold)
-        {
-            List<RoomMappingResult> roomMappingResults = null;
             
-            foreach (var inputFile in InputFiles)
+        }
+       
+        public override List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
+        {
+            List<RoomMappingResult> roomMappingResults = new List<RoomMappingResult>();
+            
+            foreach (var hotelBedSupplierdata in HotelBedSupplierData)
             {
-                roomMappingResults = new List<RoomMappingResult>();
-                EpsSupplierData = PopulateData(inputFile.EpsDataFileName);
-                HotelBedSupplierData = PopulateData(inputFile.HbDataFileName);
 
-                foreach (var hotelBedRoom in HotelBedSupplierData.RoomsData)
+                var epsSupplierData = EpsSupplierData.FirstOrDefault(x => x.HotelClarifiId == hotelBedSupplierdata.HotelClarifiId);
+                foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
-                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", HotelBedSupplierData.HotelClarifiId, HotelBedSupplierData.SupplierId, hotelBedRoom.SupplierRoomId);
+                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId);
                     
-                    foreach (var targetRoom in EpsSupplierData.RoomsData)
+                    foreach (var targetRoom in epsSupplierData.RoomsData)
                     {
                         foreach (var matchingField in matchingFields)
                         {
@@ -72,11 +54,11 @@ namespace Clarify.FuzzyMatchingTest
                     roomMappingResult.SetMatchedRoom();
                     roomMappingResults.Add(roomMappingResult);
                 }
-                var roomMappingResultWithThreshold = GetResultMatchingThreshold(roomMappingResults, threshold);
+                //var roomMappingResultWithThreshold = GetResultMatchingThreshold(roomMappingResults, threshold);
 
-                DataWriter.WriteHotelBedsRoomMatching($"{inputFile.ClarifiHotelId}_{threshold}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResultWithThreshold);
-                DataWriter.WriteRoomMatchingMetaData(roomMappingResultWithThreshold, EpsSupplierData, HotelBedSupplierData);
-                DataWriter.WriteEPSRoomMatching($"{inputFile.ClarifiHotelId}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", EpsSupplierData, roomMappingResults);
+                //DataWriter.WriteHotelBedsRoomMatching($"{inputFile.ClarifiHotelId}_{threshold}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResultWithThreshold);
+                //DataWriter.WriteRoomMatchingMetaData(roomMappingResultWithThreshold, EpsSupplierData, HotelBedSupplierData);
+                //DataWriter.WriteEPSRoomMatching($"{inputFile.ClarifiHotelId}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", EpsSupplierData, roomMappingResults);
                
             }
             return roomMappingResults;
@@ -114,20 +96,7 @@ namespace Clarify.FuzzyMatchingTest
             return model;
         }
 
-        private void PopulateInputData()
-        {
-            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input\\");
-            foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
-            {
-                string[] words = epsFileName.Split('_');
-
-                if (words != null && words.Length > 0)
-                {
-                    string hotelBedFileName = filePaths.FirstOrDefault(n => n.Contains(words[0]) && n.Contains("HB"));
-                    InputFiles.Add(new InputFile(Path.GetFileName(words[0]), epsFileName, hotelBedFileName));
-                }
-            }
-        }
+        
 
         
     }

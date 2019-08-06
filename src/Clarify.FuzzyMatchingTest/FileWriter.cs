@@ -9,27 +9,11 @@ using Newtonsoft.Json;
 namespace Clarify.FuzzyMatchingTest
 {
     public class FileWriter : IDataWriter
-    {
-        public FileWriter()
+    { 
+       
+        public void WriteEPSRoomMatching(string fileName, List<EpsMappedRooms> epsMappedRoomView)
         {
-            File.AppendAllText("RoomResultStats.csv", "ClarifiHotelId,EPSRooms,HotelBedsRooms,MatchedRooms,MatchingPercentage,MatchedRoomsDetails");
-        }
-        public void WriteEPSRoomMatching(string fileName, ClarifiModel epsSupplierData, List<RoomMappingResult> roomMappingResults)
-        {
-            List<EpsMappedRooms> epsMappedRoomView = new List<EpsMappedRooms>();
-            foreach (var epsRoom in epsSupplierData.RoomsData)
-            {
-                var roomsMappedToEpsRoom = roomMappingResults.FindAll(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
-                if (roomsMappedToEpsRoom != null)
-                {
-                    epsMappedRoomView.Add(new EpsMappedRooms()
-                    {
-                        EpsRoomId = epsRoom.SupplierRoomId,
-                        EpsRoomName = epsRoom.Name,
-                        MappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom)
-                    });
-                }
-            }
+            
             if (epsMappedRoomView.Count > 0)
             {
                 string json = JsonConvert.SerializeObject(epsMappedRoomView);
@@ -97,5 +81,6 @@ namespace Clarify.FuzzyMatchingTest
             return hotelBedMappedRoomDetails;
         }
 
+      
     }
 }

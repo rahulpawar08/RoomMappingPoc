@@ -109,10 +109,14 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
 
         public void UpdateNameIfAccessible()
         {
-            if(Amenities!=null && Amenities.Count > 0 && !Name.ToLower().Contains("accessible"))
+            if (Name != null)
             {
-                if(Amenities.Any(a=>a.Name.ToLower().Contains("wheelchair")|| a.Name.ToLower().Contains("accessible"))){
-                    Name += ", Accessible";
+                if (Amenities != null && Amenities.Count > 0 && !Name.ToLower().Contains("accessible"))
+                {
+                    if (Amenities.Any(a => a.Name.ToLower().Contains("wheelchair") || a.Name.ToLower().Contains("accessible")))
+                    {
+                        Name += ", Accessible";
+                    }
                 }
             }
         }

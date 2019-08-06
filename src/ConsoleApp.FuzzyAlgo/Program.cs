@@ -14,15 +14,27 @@ namespace ConsoleApp.FuzzyAlgo
         {
             int expectedMatchingScore = 80;
             //Available Fields => SQF: SquareFoot, NM: Name, BD: Bed Details, RV: Room View, DESC: Room Description
-            List<string> matchingFields = new List<string>() { "SQF_NM_BD_RV" }; 
-
-            RoomMappingCore roomMappingCore = new RoomMappingCore();
-            roomMappingCore.Initialize();
+            List<string> matchingFields = new List<string>() { "SQF_NM_BD_RV" };
+            var roomMappingviewExtractor = new RoomMappingViewExtractor();
+            IDataWriter writer = new FileWriter();
+            BaseRoomMappingStrategy roomMappingStrategy = new SingleStringMatchingStrategy(new FuzzyStringMatchingAlgo());
+            roomMappingStrategy.Initialize();
 
             Console.WriteLine($"Starting with Room Mapping with fields - {GetCommaSeperatedFields(matchingFields)}.");
+            var roomMappingResult = roomMappingStrategy.ExecuteHotelBedEanRoomMapping(matchingFields);
 
-            List<RoomMappingResult> roomMappingResult = roomMappingCore.ExecuteHotelBedEanRoomMapping(matchingFields, expectedMatchingScore); 
-            
+            var hotelBedsMappedView = roomMappingviewExtractor.GetRoomMappingWithTresholdPerHotel(roomMappingResult, expectedMatchingScore);
+
+            var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView);
+
+            foreach (var kvPair in hotelBedsMappedView)
+            {
+                writer.WriteHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
+            }
+            foreach(var epsMappingKvPair in epsMappedView)
+            {
+                writer.WriteEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
+            }
             Console.WriteLine($"The result of algorithm is stored in the output folder.");
 
             #region RemoveMe
