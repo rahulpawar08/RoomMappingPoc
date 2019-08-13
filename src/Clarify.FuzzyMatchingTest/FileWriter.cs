@@ -18,7 +18,7 @@ namespace Clarify.FuzzyMatchingTest
             {
                 string json = JsonConvert.SerializeObject(epsMappedRoomView);
 
-                System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + "\\Output\\" + fileName, json);
+                System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + "\\Output\\RoomType\\" + fileName, json);
             }
         }
 
@@ -29,9 +29,8 @@ namespace Clarify.FuzzyMatchingTest
                 result.ForEach(r => r.RoomMatchingScore.OrderByDescending(s => s.MatchingScore));
                 string json = JsonConvert.SerializeObject(result);
 
-                System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + "\\Output\\" + fileName, json);
-
-
+                System.IO.File.WriteAllText(Directory.GetCurrentDirectory() + "\\Output\\RoomType\\" + fileName, json);
+                
             }
         }
 

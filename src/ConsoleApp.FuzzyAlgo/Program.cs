@@ -1,5 +1,6 @@
 ﻿using Clarify.FuzzyMatchingTest;
 using Clarify.FuzzyMatchingTest.Data.Models;
+using Clarify.FuzzyMatchingTest.Strategy;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,11 @@ namespace ConsoleApp.FuzzyAlgo
         static void Main(string[] args)
         {
             int expectedMatchingScore = 80;
-            //Available Fields => SQF: SquareFoot, NM: Name, BD: Bed Details, RV: Room View, DESC: Room Description
-            List<string> matchingFields = new List<string>() { "SQF_NM_BD_RV" };
+            //Available Fields => SQF: SquareFoot, TY: Type, BD: Bed Details, RV: Room View, DESC: Room Description
+            List<string> matchingFields = new List<string>() { "SQF_TY_BD_RV" };
             var roomMappingviewExtractor = new RoomMappingViewExtractor();
             IDataWriter writer = new FileWriter();
-            BaseRoomMappingStrategy roomMappingStrategy = new SingleStringMatchingStrategy(new FuzzyStringMatchingAlgo());
+            BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
             roomMappingStrategy.Initialize();
 
             Console.WriteLine($"Starting with Room Mapping with fields - {GetCommaSeperatedFields(matchingFields)}.");

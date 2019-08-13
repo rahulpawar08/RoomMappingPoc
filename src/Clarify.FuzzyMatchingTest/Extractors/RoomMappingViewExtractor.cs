@@ -37,6 +37,7 @@ namespace Clarify.FuzzyMatchingTest
 
         public Dictionary<string, List<RoomMappingResult>> GetRoomMappingWithTresholdPerHotel(List<RoomMappingResult> roomMappingResult, int expectedMatchingScore)
         {
+            
             List<RoomMappingResult> roomMappingResultWithExpectedScore = new List<RoomMappingResult>();
             foreach (var result in roomMappingResult)
             {
@@ -44,7 +45,8 @@ namespace Clarify.FuzzyMatchingTest
                 {
                     if (score.MatchingScore >= expectedMatchingScore)
                     {
-                        if (!roomMappingResultWithExpectedScore.Any(r => r.RoomId == result.RoomId))
+                       
+                        if (!roomMappingResultWithExpectedScore.Any(r => r.RoomId == result.RoomId && r.ClarifiHotelId == result.ClarifiHotelId))
                         {
                             roomMappingResultWithExpectedScore.Add(result);
                         }
@@ -52,8 +54,11 @@ namespace Clarify.FuzzyMatchingTest
                 }
             }
 
-            return roomMappingResultWithExpectedScore.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
+            return  roomMappingResultWithExpectedScore.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
+
+            
         }
+
 
         public List<RoomMappingMetadata> GetRoomMappingMetadata(List<RoomMappingResult> roomMappingResultWithThreshold, List<ClarifiModel> epsSupplierData, List<ClarifiModel> hotelBedsSupplierData)
         {

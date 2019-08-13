@@ -77,7 +77,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             if(fields.Contains("SQF"))
             strBuilder.Append(SquareFootage);
 
-            if (fields.Contains("NM"))
+            if (fields.Contains("TY"))
                 strBuilder.Append(" " + Name);
 
             if (fields.Contains("BD"))
