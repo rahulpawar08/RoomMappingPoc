@@ -46,7 +46,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void InitializeMapping()
         {
-            _mapping = File.ReadAllLines(please fix me)
+            _mapping = File.ReadAllLines("please fix me")
                            .Skip(1)
                            .Select(x => GetMapping(x))
                            .ToList();

@@ -54,7 +54,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void PopulateInputData()
         {
-            string[] filePaths = Directory.GetFiles(please fix me);
+            string[] filePaths = Directory.GetFiles("please fix me");
             foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
             {
                 string[] words = epsFileName.Split('_');
