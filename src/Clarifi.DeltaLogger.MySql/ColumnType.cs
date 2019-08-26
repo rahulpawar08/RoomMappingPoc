@@ -1,4 +1,4 @@
-﻿namespace Clarifi.DeltaLogger.MySql
+﻿namespace Clarifi.RoomMappingLogger.MySql
 {
     internal enum ColumnType
     {

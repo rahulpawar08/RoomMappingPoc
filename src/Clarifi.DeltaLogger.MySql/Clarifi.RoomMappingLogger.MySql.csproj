@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Clarifi.DeltaLogger\Clarifi.DeltaLogger.csproj" />
+    <ProjectReference Include="..\Clarifi.DeltaLogger\Clarifi.RoomMappingLogger.csproj" />
   </ItemGroup>
 
 </Project>

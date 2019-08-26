@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Clarifi.DeltaLogger</RootNamespace>
+    <RootNamespace>Clarifi.RoomMappingLogger</RootNamespace>
   </PropertyGroup>
 
 </Project>

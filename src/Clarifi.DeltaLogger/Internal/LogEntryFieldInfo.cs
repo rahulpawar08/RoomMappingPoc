@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Clarifi.DeltaLogger.Internal
+namespace Clarifi.RoomMappingLogger.Internal
 {
     internal class LogEntryFieldInfo : FieldInfo, INestedField
     {

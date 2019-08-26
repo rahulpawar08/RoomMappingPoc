@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
 
-namespace Clarifi.DeltaLogger
+namespace Clarifi.RoomMappingLogger
 {
     public static class KeyGenerator
     {

@@ -1,0 +1,122 @@
+MH,MOBILE HOME,roomtype
+BUN,BUNGALOW,roomtype
+CAB,Cabin,roomtype
+CHA,CHALET,roomtype
+CTG,HOUSE,roomtype
+CUE,CAVE,roomtype
+DBL,DOUBLE,unknown
+APT,APARTMENT,roomtype
+BED,Bed in dormitory,bedding
+DBT,Double or Twin,unknown
+DUS,DOUBLE SINGLE USE,unknown
+FAM,FAMILY ROOM,roomtype
+HOM,HOME,roomtype
+JSU,JUNIOR SUITE,roomtype
+LOD,LODGE,roomtype
+QUA,QUADRUPLE,unknown
+ROO,Room,roomtype
+SGL,SINGLE,unknown
+STU,STUDIO,roomtype
+SUI,SUITE,roomtype
+TLN,Tent,roomtype
+TPL,TRIPLE,unknown
+TWH,TOWNHOME,roomtype
+TWN,TWIN,unknown
+VIL,VILLA,roomtype
+BOA,Boat,roomtype
+B2,TWO BEDROOMS,roomtype
+B3,THREE BEDROOMS,roomtype
+BL,WITH BALCONY,roomtype
+C5,CAPACITY 5,unknown
+DX,DELUXE,roomtype
+EY,ECONOMY,roomtype
+FH,WITH SHARED BATHROOM,bathrooms
+OM,COMFORT,roomtype
+PI,PREMIUM,roomtype
+ST,STANDARD,roomtype
+SU,SUPERIOR,roomtype
+TR,WITH TERRACE,roomtype
+VQ,CANAL VIEW,views
+WV,WITH VIEWS,views
+Z1,BASIC,roomtype
+2K,TWO KING BEDS,bedding
+2Q,TWO QUEEN BEDS,bedding
+3B,THREE BEDS,bedding
+AC,WITH AIR CONDITIONING,roomtype
+B1,ONE BEDROOM,roomtype
+B4,FOUR BEDROOMS,roomtype
+B5,FIVE BEDROOMS,roomtype
+BF,BEACH FRONT,views
+BK,BUNK BED,bedding
+C1,CAPACITY 1,unknown
+C2,CAPACITY 2,unknown
+C3,CAPACITY 3,unknown
+C6,CAPACITY 6,unknown
+CB,CLUB,roomtype
+DB,WITH DOUBLE BED,bedding
+DP,DUPLEX,roomtype
+EJ,EXECUTIVE,roomtype
+FA,FEMALE ROOM,roomtype
+GD,GRAND,roomtype
+GR,GUEST ROOM,roomtype
+GV,GARDEN VIEW,views
+HM,HONEYMOON,roomtype
+IN,INNER,roomtype
+KG,KING SIZE BED,bedding
+KT,WITH KITCHENETTE,roomtype
+LX,LUXURY,roomtype
+MQ,MALE ROOM,roomtype
+NC,NO AIR CONDITIONING,roomtype
+NM,NON SMOKING,roomtype
+OV,OCEAN VIEW,views
+PE,PREMIER,roomtype
+QN,QUEEN SIZE BED,bedding
+RO,RUN OF HOUSE,roomtype
+RV,RIVER VIEW,views
+VL,LAGOON VIEW,views
+VM,SEA VIEW,views
+VP,POOL VIEW,views
+1B,ONE BED,bedding
+2B,TWO BEDS,bedding
+2D,TWO DOUBLE BEDS,bedding
+AS,CLASSIC,roomtype
+C4,CAPACITY 4,unknown
+C7,CAPACITY 7,unknown
+C8,CAPACITY 8,unknown
+C9,CAPACITY 9,unknown
+CV,CITY VIEW,views
+JA,WITH JACUZZI,roomtype
+LK,LAKE VIEW,views
+PP,WITH PRIVATE POOL,roomtype
+PR,PROMO,roomtype
+PS,PARTIAL SEA VIEW,views
+SF,SEA FRONT,views
+SS,SIDE SEA VIEW,views
+VN,MOUNTAIN VIEW,views
+AX,ANNEX,roomtype
+BV,BAY VIEW,views
+OF,OCEAN FRONT,views
+PO,PARTIAL OCEAN VIEW,views
+PV,PARK VIEW,views
+RE,RESORT VIEW,views
+BS,BUSINESS,roomtype
+CM,CONNECTING ROOM,roomtype
+FV,FOUNTAIN VIEW,views
+HV,HARBOUR VIEW,views
+JE,JAPANESE ROOM,roomtype
+LV,LAND VIEW,views
+MV,MARINA VIEW,views
+PT,PRESTIGE,roomtype
+SD,SEMIDOUBLE,unknown
+VG,GOLF VIEW,views
+WB,WITHOUT BALCONY,roomtype
+1W,ONE BATHROOM,bathrooms
+XW,WITH MORE THAN THREE BATHROOMS,bathrooms
+B6,SIX BEDROOMS,roomtype
+2W,TWO BATHROOMS,bathrooms
+3W,THREE BATHROOMS,bathrooms
+BB,TWELVE BEDROOMS,roomtype
+B7,SEVEN BEDROOMS,roomtype
+CC,CAPACITY 10,unknown
+B8,EIGHT BEDROOMS,roomtype
+B9,NINE BEDROOMS,roomtype

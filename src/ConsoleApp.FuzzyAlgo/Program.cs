@@ -1,23 +1,32 @@
-﻿using Clarify.FuzzyMatchingTest;
-using Clarify.FuzzyMatchingTest.Data.Models;
+﻿using Clarifi.DeltaLogger.Scripts;
+using Clarifi.RoomMappingLogger;
+using Clarifi.RoomMappingLogger.MySql;
+using Clarify.FuzzyMatchingTest;
 using Clarify.FuzzyMatchingTest.Strategy;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleApp.FuzzyAlgo
 {
     class Program
     {
-       
         static void Main(string[] args)
         {
+            new Setup().Run();
+
+            //Comment this line if MySql schema is already created
+            Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
+
+            var logger = new Logger(new LogDb(Settings.GetConnectionString()));
+            IDataWriter dataWriter = new MySqlWriter(logger);
+
             int expectedMatchingScore = 80;
             //Available Fields => SQF: SquareFoot, TY: Type, BD: Bed Details, RV: Room View, DESC: Room Description
             List<string> matchingFields = new List<string>() { "SQF_TY_BD_RV" };
             var roomMappingviewExtractor = new RoomMappingViewExtractor();
-            IDataWriter writer = new FileWriter();
+
             BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
             roomMappingStrategy.Initialize();
 
@@ -28,14 +37,17 @@ namespace ConsoleApp.FuzzyAlgo
 
             var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView);
 
-            foreach (var kvPair in hotelBedsMappedView)
+            //This is HotelBeds mapped view
+            //foreach (var kvPair in hotelBedsMappedView)
+            //{
+            //    dataWriter.WriteHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
+            //}
+
+            foreach (var epsMappingKvPair in epsMappedView)
             {
-                writer.WriteHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
+                dataWriter.WriteEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
             }
-            foreach(var epsMappingKvPair in epsMappedView)
-            {
-                writer.WriteEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
-            }
+
             Console.WriteLine($"The result of algorithm is stored in the output folder.");
 
             #region RemoveMe

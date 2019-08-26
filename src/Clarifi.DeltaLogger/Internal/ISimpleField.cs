@@ -1,4 +1,4 @@
-﻿namespace Clarifi.DeltaLogger.Internal
+﻿namespace Clarifi.RoomMappingLogger.Internal
 {
     public interface ISimpleField
     {

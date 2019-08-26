@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Clarifi.DeltaLogger.Internal;
+using Clarifi.RoomMappingLogger.Internal;
 
-namespace Clarifi.DeltaLogger.MySql
+namespace Clarifi.RoomMappingLogger.MySql
 {
     internal class Table
     {

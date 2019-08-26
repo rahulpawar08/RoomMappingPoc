@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Clarifi.DeltaLogger.Internal
+namespace Clarifi.RoomMappingLogger.Internal
 {
     // Marker interfaces for POCOs
     internal interface ILogEntry

@@ -1,9 +1,9 @@
-﻿using Clarifi.DeltaLogger.Internal;
+﻿using Clarifi.RoomMappingLogger.Internal;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clarifi.DeltaLogger
+namespace Clarifi.RoomMappingLogger
 {
     public interface IScript
     {

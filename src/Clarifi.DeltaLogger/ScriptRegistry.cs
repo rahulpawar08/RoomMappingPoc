@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Clarifi.DeltaLogger
+namespace Clarifi.RoomMappingLogger
 {
     public class ScriptRegistry
     {

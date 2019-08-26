@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Clarifi.DeltaLogger.MySql
+namespace Clarifi.RoomMappingLogger.MySql
 { 
     internal class Column
     {

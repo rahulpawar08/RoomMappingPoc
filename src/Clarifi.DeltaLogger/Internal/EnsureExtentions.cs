@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Clarifi.DeltaLogger.Internal
+namespace Clarifi.RoomMappingLogger.Internal
 {
     internal static class EnsureExtentions
     {

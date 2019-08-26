@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Clarifi.DeltaLogger.Internal
+namespace Clarifi.RoomMappingLogger.Internal
 {
     public interface INestedField
     {

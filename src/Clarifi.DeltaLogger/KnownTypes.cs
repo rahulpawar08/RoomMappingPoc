@@ -1,11 +1,11 @@
-﻿using Clarifi.DeltaLogger.Internal;
+﻿using Clarifi.RoomMappingLogger.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Clarifi.DeltaLogger
+namespace Clarifi.RoomMappingLogger
 {
     public class KnownTypes
     {

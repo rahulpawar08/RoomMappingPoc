@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Clarifi.DeltaLogger
+namespace Clarifi.RoomMappingLogger
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
     public class TypeInfoAttribute : Attribute

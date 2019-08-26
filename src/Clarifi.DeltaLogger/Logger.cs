@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Clarifi.DeltaLogger.Internal;
+using Clarifi.RoomMappingLogger.Internal;
 
-namespace Clarifi.DeltaLogger
+namespace Clarifi.RoomMappingLogger
 {
     public class Logger
     {

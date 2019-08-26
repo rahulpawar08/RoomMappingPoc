@@ -1,9 +1,9 @@
-﻿using Clarifi.DeltaLogger.MySql;
+﻿using Clarifi.RoomMappingLogger.MySql;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Clarifi.DeltaLogger.MySql
+namespace Clarifi.RoomMappingLogger.MySql
 {
     public abstract class BaseScript : IScript
     {

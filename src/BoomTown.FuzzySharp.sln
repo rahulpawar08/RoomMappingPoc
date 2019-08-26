@@ -13,9 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarify.FuzzyMatchingTest",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.FuzzyAlgo", "ConsoleApp.FuzzyAlgo\ConsoleApp.FuzzyAlgo.csproj", "{08FFF010-8D22-44A3-ACAE-A97A913FDA44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clarifi.DeltaLogger", "Clarifi.DeltaLogger\Clarifi.DeltaLogger.csproj", "{94DF3731-C0C1-46BE-840F-7637CDBBCB22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger", "Clarifi.DeltaLogger\Clarifi.RoomMappingLogger.csproj", "{94DF3731-C0C1-46BE-840F-7637CDBBCB22}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.DeltaLogger.MySql", "Clarifi.DeltaLogger.MySql\Clarifi.DeltaLogger.MySql.csproj", "{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger.MySql", "Clarifi.DeltaLogger.MySql\Clarifi.RoomMappingLogger.MySql.csproj", "{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clarifi.RoomMappingLogger.Scripts", "Clarifi.DeltaLogger.Scripts\Clarifi.RoomMappingLogger.Scripts.csproj", "{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{94DF3731-C0C1-46BE-840F-7637CDBBCB22} = {94DF3731-C0C1-46BE-840F-7637CDBBCB22}
+		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1} = {AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +53,10 @@ Global
 		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

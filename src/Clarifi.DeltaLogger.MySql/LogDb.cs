@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
-using Clarifi.DeltaLogger.Internal;
+using Clarifi.RoomMappingLogger.Internal;
 using global::MySql.Data.MySqlClient;
 
-namespace Clarifi.DeltaLogger.MySql
+namespace Clarifi.RoomMappingLogger.MySql
 {
     public class LogDb : ILogDb
     {

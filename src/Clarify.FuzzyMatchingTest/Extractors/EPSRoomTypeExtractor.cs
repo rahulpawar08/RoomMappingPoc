@@ -21,19 +21,19 @@ namespace Clarify.FuzzyMatchingTest
         public string GetRoomType(string supplierRoomId)
         {
             return _mapping.FirstOrDefault(x => x.SupplierRoomId == supplierRoomId)?.CleanRoomName;
-            
+
         }
 
         private void InitializeMapping()
         {
-            _mapping = JsonConvert.DeserializeObject<List<EpsRoomTypeMapping>>(File.ReadAllText("please fix me"));
+            _mapping = JsonConvert.DeserializeObject<List<EpsRoomTypeMapping>>(File.ReadAllText(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\EPSRoomNames.txt"));
         }
 
         internal string GetFields(RoomsData targetRoom, List<string> keys)
         {
             string result = string.Empty;
 
-            foreach(var key in keys)
+            foreach (var key in keys)
             {
                 switch (key)
                 {
@@ -81,13 +81,13 @@ namespace Clarify.FuzzyMatchingTest
         {
             var description = targetRoom.Descriptions.FirstOrDefault(x => x.Type == "Overview")?.Value;
             var splits = description.Replace(@",", "").Split(' ').ToList();
-            
-            if(splits.Contains("bathroom"))
+
+            if (splits.Contains("bathroom"))
             {
                 return "1 bathroom";
             }
 
-            if(splits.Contains("bathrooms", StringComparer.OrdinalIgnoreCase))
+            if (splits.Contains("bathrooms", StringComparer.OrdinalIgnoreCase))
             {
                 return splits[splits.IndexOf("bathrooms") - 1] + "bathrooms";
             }
@@ -113,7 +113,7 @@ namespace Clarify.FuzzyMatchingTest
             var htmlDocument = new HtmlDocument();
             htmlDocument.LoadHtml(value);
             return htmlDocument.DocumentNode.ChildNodes.First().ChildNodes.First().InnerHtml;
-            
+
         }
     }
 }

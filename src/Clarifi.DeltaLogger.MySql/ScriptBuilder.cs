@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Clarifi.DeltaLogger.Internal;
+using Clarifi.RoomMappingLogger.Internal;
 
-namespace Clarifi.DeltaLogger.MySql
+namespace Clarifi.RoomMappingLogger.MySql
 {
     internal static class ScriptBuilder
     {
