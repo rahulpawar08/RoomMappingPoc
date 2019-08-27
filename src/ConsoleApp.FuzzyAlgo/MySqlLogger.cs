@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp.FuzzyAlgo
 {
-    internal class MySqlWriter : IDataWriter
+    internal class MySqlLogger : IDataLogger
     {
         Logger _logger = null;
 
-        public MySqlWriter(Logger logger)
+        public MySqlLogger(Logger logger)
         {
             _logger = logger;
         }
 
-        public void WriteEPSRoomMatching(string fileName, List<EpsMappedRooms> epsMappedRooms)
+        public void LogEPSRoomMatching(string fileName, List<EpsMappedRooms> epsMappedRooms)
         {
             foreach (var epsMappedRoom in epsMappedRooms)
             {
@@ -29,14 +29,21 @@ namespace ConsoleApp.FuzzyAlgo
             }
         }
 
-        public void WriteHotelBedsRoomMatching(string fileName, List<RoomMappingResult> result)
+        public void LogHotelBedsRoomMatching(string fileName, List<RoomMappingResult> result)
         {
             throw new NotImplementedException();
         }
 
-        public void WriteRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData)
+        public void LogRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData)
         {
             throw new NotImplementedException();
+        }
+
+        public void LogSupplierRoomData(ClarifiModel supplierRoomData)
+        {
+            var supplier_roomdata = ClarifiRoomDataTranslator.GetClarifiModel(supplierRoomData);
+
+            Task.Run(() => _logger.RecordEntryAsync(supplier_roomdata)).Wait();
         }
     }
 }

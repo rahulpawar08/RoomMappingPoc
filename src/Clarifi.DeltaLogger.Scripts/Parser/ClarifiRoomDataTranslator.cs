@@ -54,7 +54,7 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                     var amenity = new LoggerScripts.Amenity()
                     {
                         AmenityGroupId = amenityData.AmenityGroupId,
-                        Description = (string)amenityData.Description ,
+                        Description = (string)amenityData.Description,
                         ImageName = (string)amenityData.ImageName,
                         Name = amenityData.Name,
                         SupplierImageUrl = (string)amenityData.SupplierImageUrl,
@@ -161,19 +161,6 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
 
             return images;
         }
-
-        private static LoggerScripts.ClarifiModel GetClarifiModel(DataModels.ClarifiModel clarifiModelData)
-        {
-            if (clarifiModelData == null)
-                return null;
-
-            return new LoggerScripts.ClarifiModel()
-            {
-                ClarifiHotelId = clarifiModelData.HotelClarifiId,
-                SupplierHotelId = clarifiModelData.SupplierId,
-                RoomsData = ParseRooms(clarifiModelData.RoomsData)
-            };
-        }
         #endregion
 
         #region Public Methods
@@ -187,6 +174,19 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 ClarifiHotelId = hotelData.clarifyHotelId,
                 SupplierHotelId = hotelData.supplierHotelId,
                 rooms = ParseRooms(hotelData.rooms)
+            };
+        }
+
+        public static LoggerScripts.ClarifiModel GetClarifiModel(DataModels.ClarifiModel clarifiModelData)
+        {
+            if (clarifiModelData == null)
+                return null;
+
+            return new LoggerScripts.ClarifiModel()
+            {
+                ClarifiHotelId = clarifiModelData.HotelClarifiId,
+                SupplierHotelId = clarifiModelData.SupplierId,
+                RoomsData = ParseRooms(clarifiModelData.RoomsData)
             };
         }
         #endregion

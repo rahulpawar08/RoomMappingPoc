@@ -8,10 +8,10 @@ using Newtonsoft.Json;
 
 namespace Clarify.FuzzyMatchingTest
 {
-    public class FileWriter : IDataWriter
+    public class FileWriter : IDataLogger
     { 
        
-        public void WriteEPSRoomMatching(string fileName, List<EpsMappedRooms> epsMappedRoomView)
+        public void LogEPSRoomMatching(string fileName, List<EpsMappedRooms> epsMappedRoomView)
         {
             
             if (epsMappedRoomView.Count > 0)
@@ -22,7 +22,7 @@ namespace Clarify.FuzzyMatchingTest
             }
         }
 
-        public void WriteHotelBedsRoomMatching(string fileName, List<RoomMappingResult> result)
+        public void LogHotelBedsRoomMatching(string fileName, List<RoomMappingResult> result)
         {
             if (result.Count > 0)
             {
@@ -34,7 +34,7 @@ namespace Clarify.FuzzyMatchingTest
             }
         }
 
-        public void WriteRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData)
+        public void LogRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData)
         {
             if (roomMappingResultWithThreshold.Count > 0)
             {
@@ -80,6 +80,9 @@ namespace Clarify.FuzzyMatchingTest
             return hotelBedMappedRoomDetails;
         }
 
-      
+        public void LogSupplierRoomData(ClarifiModel supplierRoomData)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

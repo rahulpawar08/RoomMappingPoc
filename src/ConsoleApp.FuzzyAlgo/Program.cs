@@ -19,57 +19,60 @@ namespace ConsoleApp.FuzzyAlgo
             //Comment this line if MySql schema is already created
             Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
 
-            var logger = new Logger(new LogDb(Settings.GetConnectionString()));
-            IDataWriter dataWriter = new MySqlWriter(logger);
-
-            int expectedMatchingScore = 80;
-            //Available Fields => SQF: SquareFoot, TY: Type, BD: Bed Details, RV: Room View, DESC: Room Description
-            List<string> matchingFields = new List<string>() { "SQF_TY_BD_RV" };
-            var roomMappingviewExtractor = new RoomMappingViewExtractor();
-
-            BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
-            roomMappingStrategy.Initialize();
-
-            Console.WriteLine($"Starting with Room Mapping with fields - {GetCommaSeperatedFields(matchingFields)}.");
-            var roomMappingResult = roomMappingStrategy.ExecuteHotelBedEanRoomMapping(matchingFields);
-
-            var hotelBedsMappedView = roomMappingviewExtractor.GetRoomMappingWithTresholdPerHotel(roomMappingResult, expectedMatchingScore);
-
-            var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView);
-
-            //This is HotelBeds mapped view
-            //foreach (var kvPair in hotelBedsMappedView)
-            //{
-            //    dataWriter.WriteHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
-            //}
-
-            foreach (var epsMappingKvPair in epsMappedView)
+            using (var logDB = new LogDb(Settings.GetConnectionString()))
             {
-                dataWriter.WriteEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
+                IDataLogger dataWriter = new MySqlLogger(new Logger(logDB));
+
+                int expectedMatchingScore = 80;
+                //Available Fields => SQF: SquareFoot, TY: Type, BD: Bed Details, RV: Room View, DESC: Room Description
+                List<string> matchingFields = new List<string>() { "SQF_TY_BD_RV" };
+                var roomMappingviewExtractor = new RoomMappingViewExtractor();
+
+                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
+                roomMappingStrategy.Initialize();
+
+                Console.WriteLine($"Starting with Room Mapping with fields - {GetCommaSeperatedFields(matchingFields)}.");
+                var roomMappingResult = roomMappingStrategy.ExecuteHotelBedEanRoomMapping(matchingFields);
+
+                var hotelBedsMappedView = roomMappingviewExtractor.GetRoomMappingWithTresholdPerHotel(roomMappingResult, expectedMatchingScore);
+
+                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView);
+
+                //This is HotelBeds mapped view
+                //foreach (var kvPair in hotelBedsMappedView)
+                //{
+                //    dataWriter.WriteHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
+                //}
+
+                roomMappingStrategy.EpsSupplierData.ForEach(x => dataWriter.LogSupplierRoomData(x));
+                roomMappingStrategy.HotelBedSupplierData.ForEach(x => dataWriter.LogSupplierRoomData(x));
+
+                foreach (var epsMappingKvPair in epsMappedView)
+                    dataWriter.LogEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
+
+                Console.WriteLine($"The result of algorithm is stored in the output folder.");
+
+                #region RemoveMe
+                //foreach (var result in roomMappingResult)
+                //{
+                //    foreach(var score in result.RoomMatchingScore)
+                //    {
+                //        if(score.MatchingScore> expectedMatchingScore)
+                //        {
+                //            if (!roomMappingResultWithExpectedScore.Any(r => r.RoomId == result.RoomId))
+                //            {
+                //                roomMappingResultWithExpectedScore.Add(result);
+
+                //                Console.WriteLine($" HB RoomId: {result.RoomId}, EPS RoomId: {score.EPSRoomId}, Score:{score.MatchingScore}, " +
+                //                             $" HB Key: {score.HotelBedMatchingString}, EPS Key: {score.EPSMatchingString}");
+                //            }
+                //        }
+                //    }
+                //}
+                //roomMappingCore.SaveMappingResult($"{matchingFields}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResult);
+                //roomMappingCore.SaveMappingResult($"{matchingFields}_ExpectedMatchingScore_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResultWithExpectedScore);
+                #endregion
             }
-
-            Console.WriteLine($"The result of algorithm is stored in the output folder.");
-
-            #region RemoveMe
-            //foreach (var result in roomMappingResult)
-            //{
-            //    foreach(var score in result.RoomMatchingScore)
-            //    {
-            //        if(score.MatchingScore> expectedMatchingScore)
-            //        {
-            //            if (!roomMappingResultWithExpectedScore.Any(r => r.RoomId == result.RoomId))
-            //            {
-            //                roomMappingResultWithExpectedScore.Add(result);
-
-            //                Console.WriteLine($" HB RoomId: {result.RoomId}, EPS RoomId: {score.EPSRoomId}, Score:{score.MatchingScore}, " +
-            //                             $" HB Key: {score.HotelBedMatchingString}, EPS Key: {score.EPSMatchingString}");
-            //            }
-            //        }
-            //    }
-            //}
-            //roomMappingCore.SaveMappingResult($"{matchingFields}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResult);
-            //roomMappingCore.SaveMappingResult($"{matchingFields}_ExpectedMatchingScore_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResultWithExpectedScore);
-            #endregion
 
             Console.WriteLine("Room Mapping Complete.");
             Console.ReadLine();

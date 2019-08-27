@@ -11,7 +11,7 @@ namespace ConsoleApp.FuzzyAlgo
             var connStr = Environment.GetEnvironmentVariable("conn_str");
             if (string.IsNullOrEmpty(connStr) == true)
             {
-                return "Server=devmysql.cufptq5ac0c7.us-east-1.rds.amazonaws.com;Port=3306;Database=Room_Delta_Logger;Uid=clarifi;Pwd=tavisca123";
+                return "Server=127.0.0.1;Port=3306;Database=room_delta_logger;Uid=root;Pwd=zaq1ZAQ!";
                 //throw new ApplicationException("Connection string is not configured.");
             }
             return connStr;
