@@ -56,7 +56,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void PopulateInputData()
         {
-            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
+            string[] filePaths = Directory.GetFiles(@"C:\Clarifi\RoomMapping\ExportedRooms");
             foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
             {
                 string[] words = epsFileName.Split('_');

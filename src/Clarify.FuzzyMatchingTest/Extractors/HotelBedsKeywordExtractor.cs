@@ -46,7 +46,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void InitializeMapping()
         {
-            _mapping = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\HBKeywords.csv")
+            _mapping = File.ReadAllLines(@"C:\Clarifi\RoomMapping\HBRoomCodeKeywords.csv")
                            .Skip(1)
                            .Select(x => GetMapping(x))
                            .ToList();

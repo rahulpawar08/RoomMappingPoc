@@ -26,7 +26,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void InitializeMapping()
         {
-            _mapping = JsonConvert.DeserializeObject<List<EpsRoomTypeMapping>>(File.ReadAllText(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\EPSRoomNames.txt"));
+            _mapping = JsonConvert.DeserializeObject<List<EpsRoomTypeMapping>>(File.ReadAllText(@"C:\Clarifi\RoomMapping\EPSCleaneRoomNames.txt"));
         }
 
         internal string GetFields(RoomsData targetRoom, List<string> keys)
