@@ -1,5 +1,6 @@
 ﻿using Clarifi.DeltaLogger.Scripts;
 using Clarifi.RoomMappingLogger;
+using Clarifi.RoomMappingLogger.ElasticSearch;
 using Clarifi.RoomMappingLogger.MySql;
 using Clarify.FuzzyMatchingTest;
 using Clarify.FuzzyMatchingTest.Strategy;
@@ -28,7 +29,12 @@ namespace ConsoleApp.FuzzyAlgo
                 List<string> matchingFields = new List<string>() { "SQF_TY_BD_RV" };
                 var roomMappingviewExtractor = new RoomMappingViewExtractor();
 
-                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
+                //BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(),
+                //    new ElasticSearchProvider("s_clarifihotels", new List<Uri> { new Uri(@"http://tavsrvtest042:9200/") }));
+
+
+                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(), null);
+
                 roomMappingStrategy.Initialize();
 
                 Console.WriteLine($"Starting with Room Mapping with fields - {GetCommaSeperatedFields(matchingFields)}.");

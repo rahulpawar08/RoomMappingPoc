@@ -186,7 +186,21 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
             {
                 ClarifiHotelId = clarifiModelData.HotelClarifiId,
                 SupplierHotelId = clarifiModelData.SupplierId,
-                RoomsData = ParseRooms(clarifiModelData.RoomsData)
+                RoomsData = ParseRooms(clarifiModelData.RoomsData),
+                SupplierFamily = clarifiModelData.SupplierFamily,
+                PropertyType = clarifiModelData.PropertyType,
+                HotelName = clarifiModelData.HotelName,
+                AddressLine1 = clarifiModelData.AddressLine1,
+                AddressLine2 = clarifiModelData.AddressLine2,
+                CityCode = clarifiModelData.CityCode,
+                CityName = clarifiModelData.CityName,
+                StateCode = clarifiModelData.StateCode,
+                StateName = clarifiModelData.StateName,
+                CountryCode = clarifiModelData.CountryCode,
+                ZipCode = clarifiModelData.ZipCode,
+                Latitude = clarifiModelData.Latitude,
+                Longitude = clarifiModelData.Longitude,
+                StarRating = clarifiModelData.RatingValue
             };
         }
         #endregion

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger.MySql", "Clarifi.DeltaLogger.MySql\Clarifi.RoomMappingLogger.MySql.csproj", "{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clarifi.RoomMappingLogger.Scripts", "Clarifi.DeltaLogger.Scripts\Clarifi.RoomMappingLogger.Scripts.csproj", "{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger.Scripts", "Clarifi.DeltaLogger.Scripts\Clarifi.RoomMappingLogger.Scripts.csproj", "{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{94DF3731-C0C1-46BE-840F-7637CDBBCB22} = {94DF3731-C0C1-46BE-840F-7637CDBBCB22}
 		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1} = {AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}

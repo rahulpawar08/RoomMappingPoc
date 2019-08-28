@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using Newtonsoft.Json;
+using Clarifi.RoomMappingLogger.ElasticSearch;
 
 namespace Clarify.FuzzyMatchingTest
 {
@@ -15,12 +16,14 @@ namespace Clarify.FuzzyMatchingTest
 
         public List<ClarifiModel> HotelBedSupplierData { get; set; }
         public IMatchingAlgorithm RoomMatchingAlgo { get; set; }
+        private ElasticSearchProvider _elasticSearchProvider = null;
+        private IMatchingAlgorithm matchingAlgorithm;
 
-        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm)
+        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, ElasticSearchProvider elasticSearchProvider)
         {
             RoomMatchingAlgo = matchingAlgorithm;
+            _elasticSearchProvider = elasticSearchProvider;
         }
-
 
         public void Initialize()
         {
@@ -33,14 +36,14 @@ namespace Clarify.FuzzyMatchingTest
 
         private void PopulateSupplierData()
         {
-            foreach(var inputFile in InputFiles)
+            foreach (var inputFile in InputFiles)
             {
-                EpsSupplierData.Add(GetClarifiModel(inputFile.EpsDataFileName));
-                HotelBedSupplierData.Add(GetClarifiModel(inputFile.HbDataFileName));
+                EpsSupplierData.Add(GetClarifiModel(inputFile.EpsDataFileName, "EPSRapid"));
+                HotelBedSupplierData.Add(GetClarifiModel(inputFile.HbDataFileName, "HotelBeds"));
             }
         }
 
-        private ClarifiModel GetClarifiModel(string fileName)
+        private ClarifiModel GetClarifiModel(string fileName, string supplier)
         {
             ClarifiModel model = null;
             using (StreamReader r = new StreamReader(fileName))
@@ -49,12 +52,14 @@ namespace Clarify.FuzzyMatchingTest
                 model = JsonConvert.DeserializeObject<ClarifiModel>(json);
                 model.RoomsData.ForEach(room => room.UpdateNameIfAccessible());
             }
+
+            //var hotelData = _elasticSearchProvider.GetHotelBySupplierIdFamily(x.SupplierId, "EPSRapid");
             return model;
         }
 
         private void PopulateInputData()
         {
-            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() +"\\Input");
+            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
             foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
             {
                 string[] words = epsFileName.Split('_');

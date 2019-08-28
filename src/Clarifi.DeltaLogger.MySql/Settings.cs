@@ -8,7 +8,7 @@ namespace Clarifi.RoomMappingLogger.MySql
         {
             var connStr = Environment.GetEnvironmentVariable("conn_str");
             if (string.IsNullOrEmpty(connStr) == true)
-                return "Server=127.0.0.1;Port=3306;Database=room_delta_logger;Uid=root;Pwd=zaq1ZAQ!";
+                return "Server=127.0.0.1;Port=3306;Database=room_delta_logger1;Uid=root;Pwd=zaq1ZAQ!";
             return connStr;
         }
     }

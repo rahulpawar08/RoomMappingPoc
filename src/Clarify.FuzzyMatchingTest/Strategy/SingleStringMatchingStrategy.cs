@@ -5,20 +5,21 @@ using System.Linq;
 using BoomTown.FuzzySharp;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using Newtonsoft.Json;
+using Clarifi.RoomMappingLogger.ElasticSearch;
 
 namespace Clarify.FuzzyMatchingTest
 {
     public class SingleStringMatchingStrategy : BaseRoomMappingStrategy
     {
-        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm)
+        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm, ElasticSearchProvider elasticSearchProvider) : base(matchingAlgorithm, elasticSearchProvider)
         {
-            
+
         }
-       
+
         public override List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
         {
             List<RoomMappingResult> roomMappingResults = new List<RoomMappingResult>();
-            
+
             foreach (var hotelBedSupplierdata in HotelBedSupplierData)
             {
 
@@ -26,7 +27,7 @@ namespace Clarify.FuzzyMatchingTest
                 foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
                     RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId);
-                    
+
                     foreach (var targetRoom in epsSupplierData.RoomsData)
                     {
                         foreach (var matchingField in matchingFields)
@@ -49,7 +50,7 @@ namespace Clarify.FuzzyMatchingTest
                         }
                         roomMappingResult.RoomMatchingScore.OrderByDescending(s => s.MatchingScore);
                     }
-                    
+
 
                     roomMappingResult.SetMatchedRoom();
                     roomMappingResults.Add(roomMappingResult);
@@ -59,11 +60,11 @@ namespace Clarify.FuzzyMatchingTest
                 //DataWriter.WriteHotelBedsRoomMatching($"{inputFile.ClarifiHotelId}_{threshold}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", roomMappingResultWithThreshold);
                 //DataWriter.WriteRoomMatchingMetaData(roomMappingResultWithThreshold, EpsSupplierData, HotelBedSupplierData);
                 //DataWriter.WriteEPSRoomMatching($"{inputFile.ClarifiHotelId}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", EpsSupplierData, roomMappingResults);
-               
+
             }
             return roomMappingResults;
         }
-        
+
         private List<RoomMappingResult> GetResultMatchingThreshold(List<RoomMappingResult> roomMappingResult, int expectedMatchingScore)
         {
             List<RoomMappingResult> roomMappingResultWithExpectedScore = new List<RoomMappingResult>();
@@ -96,9 +97,9 @@ namespace Clarify.FuzzyMatchingTest
             return model;
         }
 
-        
 
-        
+
+
     }
 
     public class EpsMappedRooms

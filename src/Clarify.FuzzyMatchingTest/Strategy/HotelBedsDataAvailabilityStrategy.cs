@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
+using Clarifi.RoomMappingLogger.ElasticSearch;
 
 namespace Clarify.FuzzyMatchingTest.Strategy
 {
@@ -11,7 +12,7 @@ namespace Clarify.FuzzyMatchingTest.Strategy
     {
         public HotelBedsKeywordExtractor HotelBedsKeywordExtractor { get; set; }
         public EPSRoomTypeExtractor EpsRoomTypeExtractor { get; set; }
-        public HotelBedsDataAvailabilityStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm)
+        public HotelBedsDataAvailabilityStrategy(IMatchingAlgorithm matchingAlgorithm, ElasticSearchProvider elasticSearchProvider) : base(matchingAlgorithm, elasticSearchProvider)
         {
             HotelBedsKeywordExtractor = new HotelBedsKeywordExtractor();
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();

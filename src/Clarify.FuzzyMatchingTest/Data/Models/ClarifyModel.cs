@@ -134,6 +134,21 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public string HotelClarifiId { get; set; }
         public string SupplierId { get; set; }
         public List<RoomsData> RoomsData { get; set; }
+
+        public string SupplierFamily { get; set; }
+        public string PropertyType { set; get; }
+        public string HotelName { get; set; }
+        public string AddressLine1 { set; get; }
+        public string AddressLine2 { set; get; }
+        public string CityCode { set; get; }
+        public string CityName { set; get; }
+        public string StateCode { set; get; }
+        public string StateName { set; get; }
+        public string CountryCode { set; get; }
+        public string ZipCode { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+        public double RatingValue { get; set; }
         // public Hotel hotel { get; set; }
     }
 }
