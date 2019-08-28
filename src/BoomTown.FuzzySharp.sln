@@ -13,15 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarify.FuzzyMatchingTest",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.FuzzyAlgo", "ConsoleApp.FuzzyAlgo\ConsoleApp.FuzzyAlgo.csproj", "{08FFF010-8D22-44A3-ACAE-A97A913FDA44}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger", "Clarifi.DeltaLogger\Clarifi.RoomMappingLogger.csproj", "{94DF3731-C0C1-46BE-840F-7637CDBBCB22}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{38AB256A-A206-4633-A441-1269DDAF3D5A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger.MySql", "Clarifi.DeltaLogger.MySql\Clarifi.RoomMappingLogger.MySql.csproj", "{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tool.HBRoomCodesExtractor", "ConsoleApp.Tool.HBRoomCodesExtractor\ConsoleApp.Tool.HBRoomCodesExtractor.csproj", "{24640990-6428-4104-855C-52114F4431F4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger.Scripts", "Clarifi.DeltaLogger.Scripts\Clarifi.RoomMappingLogger.Scripts.csproj", "{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{94DF3731-C0C1-46BE-840F-7637CDBBCB22} = {94DF3731-C0C1-46BE-840F-7637CDBBCB22}
-		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1} = {AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tool.EPSRoomNameCleaner", "ConsoleApp.Tool.EPSRoomNameCleaner\ConsoleApp.Tool.EPSRoomNameCleaner.csproj", "{7CB41496-6B5F-4E3C-BA9E-734897C16136}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,24 +41,22 @@ Global
 		{08FFF010-8D22-44A3-ACAE-A97A913FDA44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08FFF010-8D22-44A3-ACAE-A97A913FDA44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08FFF010-8D22-44A3-ACAE-A97A913FDA44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94DF3731-C0C1-46BE-840F-7637CDBBCB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94DF3731-C0C1-46BE-840F-7637CDBBCB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94DF3731-C0C1-46BE-840F-7637CDBBCB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94DF3731-C0C1-46BE-840F-7637CDBBCB22}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FA2DB6F9-AB8D-4796-AB89-2C9B7A43A10D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24640990-6428-4104-855C-52114F4431F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24640990-6428-4104-855C-52114F4431F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24640990-6428-4104-855C-52114F4431F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24640990-6428-4104-855C-52114F4431F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB41496-6B5F-4E3C-BA9E-734897C16136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB41496-6B5F-4E3C-BA9E-734897C16136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB41496-6B5F-4E3C-BA9E-734897C16136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CB41496-6B5F-4E3C-BA9E-734897C16136}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{72C8E578-EA1E-4FB2-BE0D-DDC7657B5BD1} = {9DF46CC8-7B06-46D4-B639-AA20550196A0}
+		{24640990-6428-4104-855C-52114F4431F4} = {38AB256A-A206-4633-A441-1269DDAF3D5A}
+		{7CB41496-6B5F-4E3C-BA9E-734897C16136} = {38AB256A-A206-4633-A441-1269DDAF3D5A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {787EDEBA-6916-4F49-BF85-CD464D5B9968}
