@@ -1,6 +1,5 @@
 ﻿using Clarifi.DeltaLogger.Scripts;
 using Clarifi.RoomMappingLogger;
-using Clarifi.RoomMappingLogger.ElasticSearch;
 using Clarifi.RoomMappingLogger.MySql;
 using Clarify.FuzzyMatchingTest;
 using Clarify.FuzzyMatchingTest.Strategy;
@@ -33,7 +32,7 @@ namespace ConsoleApp.FuzzyAlgo
                 //    new ElasticSearchProvider("s_clarifihotels", new List<Uri> { new Uri(@"http://tavsrvtest042:9200/") }));
 
 
-                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(), null);
+                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
 
                 roomMappingStrategy.Initialize();
 

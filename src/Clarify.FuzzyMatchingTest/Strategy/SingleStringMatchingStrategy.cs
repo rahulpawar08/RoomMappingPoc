@@ -5,13 +5,12 @@ using System.Linq;
 using BoomTown.FuzzySharp;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using Newtonsoft.Json;
-using Clarifi.RoomMappingLogger.ElasticSearch;
 
 namespace Clarify.FuzzyMatchingTest
 {
     public class SingleStringMatchingStrategy : BaseRoomMappingStrategy
     {
-        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm, ElasticSearchProvider elasticSearchProvider) : base(matchingAlgorithm, elasticSearchProvider)
+        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm)
         {
 
         }

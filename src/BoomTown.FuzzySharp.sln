@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Clarifi.RoomMappingLogger.S
 		{AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1} = {AC6F78FB-BB2E-4D34-BD94-3EDF3F4BA5C1}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tool.HBRoomCodesExtractor", "ConsoleApp.Tool.HBRoomCodesExtractor\ConsoleApp.Tool.HBRoomCodesExtractor.csproj", "{24640990-6428-4104-855C-52114F4431F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Tool.HBRoomCodesExtractor", "ConsoleApp.Tool.HBRoomCodesExtractor\ConsoleApp.Tool.HBRoomCodesExtractor.csproj", "{24640990-6428-4104-855C-52114F4431F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tool.EPSRoomNameCleaner", "ConsoleApp.Tool.EPSRoomNameCleaner\ConsoleApp.Tool.EPSRoomNameCleaner.csproj", "{7CB41496-6B5F-4E3C-BA9E-734897C16136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Tool.EPSRoomNameCleaner", "ConsoleApp.Tool.EPSRoomNameCleaner\ConsoleApp.Tool.EPSRoomNameCleaner.csproj", "{7CB41496-6B5F-4E3C-BA9E-734897C16136}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{6ECB4C45-ECCC-4CD4-B612-6982E6DC0A5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,8 +77,8 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{72C8E578-EA1E-4FB2-BE0D-DDC7657B5BD1} = {9DF46CC8-7B06-46D4-B639-AA20550196A0}
-		{24640990-6428-4104-855C-52114F4431F4} = {38AB256A-A206-4633-A441-1269DDAF3D5A}
-		{7CB41496-6B5F-4E3C-BA9E-734897C16136} = {38AB256A-A206-4633-A441-1269DDAF3D5A}
+		{24640990-6428-4104-855C-52114F4431F4} = {6ECB4C45-ECCC-4CD4-B612-6982E6DC0A5D}
+		{7CB41496-6B5F-4E3C-BA9E-734897C16136} = {6ECB4C45-ECCC-4CD4-B612-6982E6DC0A5D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {787EDEBA-6916-4F49-BF85-CD464D5B9968}

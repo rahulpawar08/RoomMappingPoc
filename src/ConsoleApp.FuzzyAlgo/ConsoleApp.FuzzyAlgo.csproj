@@ -6,15 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Elasticsearch.Net" Version="1.3.1" />
-    <PackageReference Include="NEST" Version="1.3.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="6.0.8" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Clarifi.DeltaLogger.MySql\Clarifi.RoomMappingLogger.MySql.csproj" />
     <ProjectReference Include="..\Clarifi.DeltaLogger.Scripts\Clarifi.RoomMappingLogger.Scripts.csproj" />
-    <ProjectReference Include="..\Clarifi.RoomMappingLogger.ElasticSearch\Clarifi.RoomMappingLogger.ElasticSearch.csproj" />
     <ProjectReference Include="..\Clarify.FuzzyMatchingTest\Clarify.FuzzyMatchingTest.csproj" />
   </ItemGroup>
 

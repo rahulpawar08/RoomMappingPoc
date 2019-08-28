@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using Newtonsoft.Json;
-using Clarifi.RoomMappingLogger.ElasticSearch;
 
 namespace Clarify.FuzzyMatchingTest
 {
@@ -16,13 +15,11 @@ namespace Clarify.FuzzyMatchingTest
 
         public List<ClarifiModel> HotelBedSupplierData { get; set; }
         public IMatchingAlgorithm RoomMatchingAlgo { get; set; }
-        private ElasticSearchProvider _elasticSearchProvider = null;
         private IMatchingAlgorithm matchingAlgorithm;
 
-        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, ElasticSearchProvider elasticSearchProvider)
+        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm)
         {
             RoomMatchingAlgo = matchingAlgorithm;
-            _elasticSearchProvider = elasticSearchProvider;
         }
 
         public void Initialize()
