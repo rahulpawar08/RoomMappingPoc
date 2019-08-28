@@ -12,7 +12,7 @@ namespace Clarify.FuzzyMatchingTest
 
         public EPSRoomTypeExtractor EpsRoomTypeExtractor { get; set; }
 
-        public PerFieldRoomMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm)
+        public PerFieldRoomMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm, "PerField Room Matching")
         {
             HotelBedsKeywordExtractor = new HotelBedsKeywordExtractor();
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();
@@ -23,7 +23,7 @@ namespace Clarify.FuzzyMatchingTest
             return ExecuteRoomMappingByRoomType();
             //var filteredRoomTypeMappingResults = FilterResults(roomTypeMappingResults);
             //List<RoomMappingResult> roomBeddingMappingResults = ExecuteRoomMappingByBedding(filteredRoomTypeMappingResults);
-            
+
         }
 
         private List<RoomMappingResult> FilterResults(List<RoomMappingResult> roomMappingResult)
@@ -60,7 +60,7 @@ namespace Clarify.FuzzyMatchingTest
                 var epsSupplierData = EpsSupplierData.FirstOrDefault(x => x.HotelClarifiId == hotelBedSupplierdata.HotelClarifiId);
                 foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
-                    
+
                     RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId);
                     var hotelBedRoomType = HotelBedsKeywordExtractor.GetExtractedString(hotelBedRoom.SupplierRoomId, "roomtype");
                     foreach (var targetRoom in epsSupplierData.RoomsData)
@@ -69,8 +69,8 @@ namespace Clarify.FuzzyMatchingTest
 
                         int score = (!string.IsNullOrEmpty(hotelBedRoomType) && !string.IsNullOrEmpty(epsRoomType)) ?
                                           RoomMatchingAlgo.GetMatchingScore(hotelBedRoomType, epsRoomType) : 100;
-                       
-                        
+
+
                         roomMappingResult.RoomMatchingScore.Add(new MatchResult()
                         {
                             MatchingMethod = "TokenSetRatio",
@@ -81,13 +81,14 @@ namespace Clarify.FuzzyMatchingTest
                             MatchingField = "roomtype"
                         });
                         roomMappingResult.RoomMatchingScore.OrderByDescending(s => s.MatchingScore);
+                        roomMappingResult.AppliedStrategyName = StrategyName;
                     }
                     roomMappingResult.SetMatchedRoom();
-                    
+
                     roomMappingResults.Add(roomMappingResult);
                 }
             }
-           
+
             return roomMappingResults;
         }
     }

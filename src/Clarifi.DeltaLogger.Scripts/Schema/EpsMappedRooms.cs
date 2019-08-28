@@ -7,6 +7,11 @@ namespace Clarifi.RoomMappingLogger.Scripts
     [TypeInfo("eps_mapped_rooms")]
     public class EpsMappedRooms : LogEntryBase
     {
+        [SimpleField("version_id")]
+        public string VersionId { get; set; }
+
+        [SimpleField("eps_hotelid")]
+        public string EpsHotelId { get; set; }
 
         [SimpleField("eps_roomid")]
         public string EpsRoomId { get; set; }
@@ -35,5 +40,8 @@ namespace Clarifi.RoomMappingLogger.Scripts
 
         [SimpleField("matching_field")]
         public string MatchingFields { get; set; }
+
+        [SimpleField("applied_strategy_name")]
+        public string AppliedStrategyName { get; set; }
     }
 }

@@ -43,6 +43,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
 
         public List<MostMatchedRoom> MostMatchedRooms { get; set; }
 
+        public string AppliedStrategyName { get; set; }
+
         public void SetMatchedRoom()
         {
             RoomMatchingScore.Sort();
@@ -68,7 +70,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         }
     }
 
-    public class MatchResult:IComparable
+    public class MatchResult : IComparable
     {
         public string MatchingMethod { get; set; }
         public string MatchingField { get; set; }
@@ -80,6 +82,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public string EPSRoomId { get; set; }
 
         public int MatchingScore { get; set; }
+
 
         public int CompareTo(object obj)
         {

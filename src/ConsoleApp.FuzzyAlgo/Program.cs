@@ -19,6 +19,7 @@ namespace ConsoleApp.FuzzyAlgo
             //Comment this line if MySql schema is already created
             Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
 
+            string runId = Guid.NewGuid().ToString();
             using (var logDB = new LogDb(Settings.GetConnectionString()))
             {
                 IDataLogger dataWriter = new MySqlLogger(new Logger(logDB));
@@ -41,7 +42,7 @@ namespace ConsoleApp.FuzzyAlgo
 
                 var hotelBedsMappedView = roomMappingviewExtractor.GetRoomMappingWithTresholdPerHotel(roomMappingResult, expectedMatchingScore);
 
-                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView);
+                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView, runId);
 
                 //This is HotelBeds mapped view
                 //foreach (var kvPair in hotelBedsMappedView)

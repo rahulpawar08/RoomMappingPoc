@@ -8,7 +8,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class RoomMappingViewExtractor
     {
-        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData,  Dictionary<string, List<RoomMappingResult>> roomMappingResults)
+        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData,  Dictionary<string, List<RoomMappingResult>> roomMappingResults, string versionId)
         {
 
             Dictionary<string, List<EpsMappedRooms>> epsMappedRoomView = new Dictionary<string, List<EpsMappedRooms>>();
@@ -24,6 +24,8 @@ namespace Clarify.FuzzyMatchingTest
                     {
                         epsMappedRooms.Add(new EpsMappedRooms()
                         {
+                            VersionId = versionId,
+                            EpsHotelId = epsRoom.SupplierId,
                             EpsRoomId = epsRoom.SupplierRoomId,
                             EpsRoomName = epsRoom.Name,
                             MappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom)
@@ -109,6 +111,7 @@ namespace Clarify.FuzzyMatchingTest
                 hotelBedMappedRoomDetail.MatchingFields = room.FieldsUsedForHighestMatch;
                 hotelBedMappedRoomDetail.MatchScore = room.HighestMatchedScore;
                 hotelBedMappedRoomDetail.EpsMatchingString = room.EpsMatchingStringForHighestMatch;
+                hotelBedMappedRoomDetail.AppliedStrategyName = room.AppliedStrategyName;
                 hotelBedMappedRoomDetails.Add(hotelBedMappedRoomDetail);
             }
             return hotelBedMappedRoomDetails;

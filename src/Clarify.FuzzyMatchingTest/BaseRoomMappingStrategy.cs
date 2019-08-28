@@ -10,6 +10,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public abstract class BaseRoomMappingStrategy : IRoomMappingStrategy
     {
+        protected readonly string StrategyName = null;
         public List<InputFile> InputFiles { get; set; }
         public List<ClarifiModel> EpsSupplierData { get; set; }
 
@@ -17,9 +18,10 @@ namespace Clarify.FuzzyMatchingTest
         public IMatchingAlgorithm RoomMatchingAlgo { get; set; }
         private IMatchingAlgorithm matchingAlgorithm;
 
-        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm)
+        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, string strategyName)
         {
             RoomMatchingAlgo = matchingAlgorithm;
+            StrategyName = strategyName;
         }
 
         public void Initialize()
@@ -70,5 +72,10 @@ namespace Clarify.FuzzyMatchingTest
         }
 
         public abstract List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields);
+
+        public string GetStrategyName()
+        {
+            return StrategyName;
+        }
     }
 }

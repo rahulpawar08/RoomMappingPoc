@@ -11,7 +11,7 @@ namespace Clarify.FuzzyMatchingTest.Strategy
     {
         public HotelBedsKeywordExtractor HotelBedsKeywordExtractor { get; set; }
         public EPSRoomTypeExtractor EpsRoomTypeExtractor { get; set; }
-        public HotelBedsDataAvailabilityStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm)
+        public HotelBedsDataAvailabilityStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm, "HotelBeds Data Availability")
         {
             HotelBedsKeywordExtractor = new HotelBedsKeywordExtractor();
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();
@@ -51,6 +51,7 @@ namespace Clarify.FuzzyMatchingTest.Strategy
                             MatchingField = "roomtype"
                         });
                         roomMappingResult.RoomMatchingScore.OrderByDescending(s => s.MatchingScore);
+                        roomMappingResult.AppliedStrategyName = StrategyName;
                     }
                     roomMappingResult.SetMatchedRoom();
 

@@ -9,5 +9,6 @@ namespace Clarify.FuzzyMatchingTest
     {
         List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields);
         void Initialize();
+        string GetStrategyName();
     }
 }

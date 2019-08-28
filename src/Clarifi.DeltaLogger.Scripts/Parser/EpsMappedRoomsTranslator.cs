@@ -27,7 +27,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 HBMatchingString = hotelBedsMappedRoomDetail.HBMatchingString,
                 HBRoomName = hotelBedsMappedRoomDetail.HBRoomName,
                 MatchingFields = hotelBedsMappedRoomDetail.MatchingFields,
-                MatchScore = hotelBedsMappedRoomDetail.MatchScore
+                MatchScore = hotelBedsMappedRoomDetail.MatchScore,
+                AppliedStrategyName = hotelBedsMappedRoomDetail.AppliedStrategyName
             };
         }
         #endregion
@@ -40,6 +41,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
 
             return new LoggerScripts.EpsMappedRooms()
             {
+                VersionId = epsMappedRoomsData.VersionId,
+                EpsHotelId = epsMappedRoomsData.EpsHotelId,
                 EpsRoomId = epsMappedRoomsData.EpsRoomId,
                 EpsRoomName = epsMappedRoomsData.EpsRoomName,
                 MappedRooms = GetHotelBedsMappedRoomDetails(epsMappedRoomsData.MappedRooms)
