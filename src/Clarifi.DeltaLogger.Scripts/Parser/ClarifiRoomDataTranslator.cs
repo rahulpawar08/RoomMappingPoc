@@ -200,7 +200,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 ZipCode = clarifiModelData.ZipCode,
                 Latitude = clarifiModelData.Latitude,
                 Longitude = clarifiModelData.Longitude,
-                StarRating = clarifiModelData.RatingValue
+                StarRating = clarifiModelData.RatingValue,
+                IsUIEnabled = clarifiModelData.IsUIEnabled
             };
         }
         #endregion

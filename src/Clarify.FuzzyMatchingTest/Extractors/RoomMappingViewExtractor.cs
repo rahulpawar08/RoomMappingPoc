@@ -8,9 +8,8 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class RoomMappingViewExtractor
     {
-        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData,  Dictionary<string, List<RoomMappingResult>> roomMappingResults, string versionId)
+        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData, Dictionary<string, List<RoomMappingResult>> roomMappingResults, string versionId, string strategyName)
         {
-
             Dictionary<string, List<EpsMappedRooms>> epsMappedRoomView = new Dictionary<string, List<EpsMappedRooms>>();
             foreach (var kvPair in roomMappingResults)
             {
@@ -18,7 +17,7 @@ namespace Clarify.FuzzyMatchingTest
                 var epsMappedRooms = new List<EpsMappedRooms>();
                 foreach (var epsRoom in epsData.RoomsData)
                 {
-                    
+
                     var roomsMappedToEpsRoom = kvPair.Value.FindAll(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
                     if (roomsMappedToEpsRoom != null)
                     {
@@ -28,6 +27,8 @@ namespace Clarify.FuzzyMatchingTest
                             EpsHotelId = epsRoom.SupplierId,
                             EpsRoomId = epsRoom.SupplierRoomId,
                             EpsRoomName = epsRoom.Name,
+                            AppliedStrategyName= strategyName,
+                            AddedDate= DateTime.UtcNow,
                             MappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom)
                         });
                     }
@@ -39,7 +40,7 @@ namespace Clarify.FuzzyMatchingTest
 
         public Dictionary<string, List<RoomMappingResult>> GetRoomMappingWithTresholdPerHotel(List<RoomMappingResult> roomMappingResult, int expectedMatchingScore)
         {
-            
+
             List<RoomMappingResult> roomMappingResultWithExpectedScore = new List<RoomMappingResult>();
             foreach (var result in roomMappingResult)
             {
@@ -47,7 +48,7 @@ namespace Clarify.FuzzyMatchingTest
                 {
                     if (score.MatchingScore >= expectedMatchingScore)
                     {
-                       
+
                         if (!roomMappingResultWithExpectedScore.Any(r => r.RoomId == result.RoomId && r.ClarifiHotelId == result.ClarifiHotelId))
                         {
                             roomMappingResultWithExpectedScore.Add(result);
@@ -56,17 +57,14 @@ namespace Clarify.FuzzyMatchingTest
                 }
             }
 
-            return  roomMappingResultWithExpectedScore.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
-
-            
+            return roomMappingResultWithExpectedScore.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
         }
-
 
         public List<RoomMappingMetadata> GetRoomMappingMetadata(List<RoomMappingResult> roomMappingResultWithThreshold, List<ClarifiModel> epsSupplierData, List<ClarifiModel> hotelBedsSupplierData)
         {
-            var roomMappingPerHotel= roomMappingResultWithThreshold.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
+            var roomMappingPerHotel = roomMappingResultWithThreshold.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
             var result = new List<RoomMappingMetadata>();
-            foreach(var roomMappingResult in roomMappingPerHotel)
+            foreach (var roomMappingResult in roomMappingPerHotel)
             {
                 var roomMappingMetaData = new RoomMappingMetadata();
                 roomMappingMetaData.ClarifiHotelId = roomMappingResult.Key;
@@ -85,7 +83,7 @@ namespace Clarify.FuzzyMatchingTest
         private List<RoomMappingOverview> GetRoomMappingOverview(List<RoomMappingResult> value)
         {
             var roomMappingOverview = new List<RoomMappingOverview>();
-            foreach(var mapping in value)
+            foreach (var mapping in value)
             {
                 var overview = new RoomMappingOverview();
                 overview.HotelBedsRoomId = mapping.RoomId;
@@ -106,7 +104,9 @@ namespace Clarify.FuzzyMatchingTest
             foreach (var room in roomsMappedToEpsRoom)
             {
                 HotelBedMappedRoomDetail hotelBedMappedRoomDetail = new HotelBedMappedRoomDetail();
-                //hotelBedMappedRoomDetail.HBRoomName=room.
+                hotelBedMappedRoomDetail.HBHotelId = room.SupplierHotelId;
+                hotelBedMappedRoomDetail.HBRoomId = room.RoomId;
+                hotelBedMappedRoomDetail.HBRoomName = room.RoomName;
                 hotelBedMappedRoomDetail.HBMatchingString = room.HBMatchingStringForHighestMatch;
                 hotelBedMappedRoomDetail.MatchingFields = room.FieldsUsedForHighestMatch;
                 hotelBedMappedRoomDetail.MatchScore = room.HighestMatchedScore;

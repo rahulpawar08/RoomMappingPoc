@@ -228,5 +228,8 @@ namespace Clarifi.RoomMappingLogger.Scripts
 
         [SimpleField("star_rating")]
         public double StarRating { get; set; }
+
+        [SimpleField("is_ui_enabled")]
+        public bool IsUIEnabled { get; set; }
     }
 }

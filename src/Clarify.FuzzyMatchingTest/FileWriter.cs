@@ -84,5 +84,20 @@ namespace Clarify.FuzzyMatchingTest
         {
             throw new NotImplementedException();
         }
+
+        public void LogRoomLevelStats(List<RoomLevelStats> roomLevelStats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void LogHotelLevelStats(List<HotelLevelStats> hotelLevelStats)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void LogRoomMappingSummary(RoomMappingSummary roomMappingSummary)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

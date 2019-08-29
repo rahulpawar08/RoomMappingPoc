@@ -14,5 +14,9 @@ namespace Clarify.FuzzyMatchingTest
         void LogRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData);
 
         void LogSupplierRoomData(ClarifiModel supplierRoomData);
+
+        void LogRoomLevelStats(List<RoomLevelStats> roomLevelStats);
+        void LogHotelLevelStats(List<HotelLevelStats> hotelLevelStats);
+        void LogRoomMappingSummary(RoomMappingSummary roomMappingSummary);
     }
 }

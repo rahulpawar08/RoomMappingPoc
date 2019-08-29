@@ -19,6 +19,12 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("eps_room_name")]
         public string EpsRoomName { get; set; }
 
+        [SimpleField("applied_strategy_name")]
+        public string AppliedStrategyName { get; set; }
+
+        [SimpleField("added_date")]
+        public DateTime AddedDate { get; set; }
+
         [NestedField()]
         public List<HotelBedsMappedRoomDetail> MappedRooms { get; set; }
     }
@@ -26,6 +32,12 @@ namespace Clarifi.RoomMappingLogger.Scripts
     [TypeInfo("hotelBeds_mapped_room_details")]
     public class HotelBedsMappedRoomDetail : LogEntryBase
     {
+        [SimpleField("hb_hotelid")]
+        public string HBHotelId { get; set; }
+
+        [SimpleField("hb_roomid")]
+        public string HBRoomId { get; set; }
+
         [SimpleField("hb_matching_string")]
         public string HBMatchingString { get; set; }
 

@@ -12,7 +12,7 @@ namespace Clarify.FuzzyMatchingTest
 
         public EPSRoomTypeExtractor EpsRoomTypeExtractor { get; set; }
 
-        public PerFieldRoomMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm, "PerField Room Matching")
+        public PerFieldRoomMatchingStrategy(IMatchingAlgorithm matchingAlgorithm, string versionId) : base(matchingAlgorithm, "PerField Room Matching", versionId)
         {
             HotelBedsKeywordExtractor = new HotelBedsKeywordExtractor();
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();
@@ -61,7 +61,7 @@ namespace Clarify.FuzzyMatchingTest
                 foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
 
-                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId);
+                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId, hotelBedRoom.Name);
                     var hotelBedRoomType = HotelBedsKeywordExtractor.GetExtractedString(hotelBedRoom.SupplierRoomId, "roomtype");
                     foreach (var targetRoom in epsSupplierData.RoomsData)
                     {
@@ -82,6 +82,7 @@ namespace Clarify.FuzzyMatchingTest
                         });
                         roomMappingResult.RoomMatchingScore.OrderByDescending(s => s.MatchingScore);
                         roomMappingResult.AppliedStrategyName = StrategyName;
+                        roomMappingResult.VersionId = VersionId;
                     }
                     roomMappingResult.SetMatchedRoom();
 

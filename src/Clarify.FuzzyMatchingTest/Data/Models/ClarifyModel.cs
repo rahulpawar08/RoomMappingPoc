@@ -149,6 +149,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double RatingValue { get; set; }
+        public bool IsUIEnabled { get; set; }
         // public Hotel hotel { get; set; }
     }
 }

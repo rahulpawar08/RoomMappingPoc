@@ -23,6 +23,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
         {
             return new LoggerScripts.HotelBedsMappedRoomDetail()
             {
+                HBHotelId = hotelBedsMappedRoomDetail.HBHotelId,
+                HBRoomId = hotelBedsMappedRoomDetail.HBRoomId,
                 EpsMatchingString = hotelBedsMappedRoomDetail.EpsMatchingString,
                 HBMatchingString = hotelBedsMappedRoomDetail.HBMatchingString,
                 HBRoomName = hotelBedsMappedRoomDetail.HBRoomName,
@@ -45,6 +47,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 EpsHotelId = epsMappedRoomsData.EpsHotelId,
                 EpsRoomId = epsMappedRoomsData.EpsRoomId,
                 EpsRoomName = epsMappedRoomsData.EpsRoomName,
+                AppliedStrategyName = epsMappedRoomsData.AppliedStrategyName,
+                AddedDate = epsMappedRoomsData.AddedDate,
                 MappedRooms = GetHotelBedsMappedRoomDetails(epsMappedRoomsData.MappedRooms)
             };
         }

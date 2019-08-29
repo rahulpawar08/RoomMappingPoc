@@ -11,6 +11,8 @@ namespace Clarify.FuzzyMatchingTest
     public abstract class BaseRoomMappingStrategy : IRoomMappingStrategy
     {
         protected readonly string StrategyName = null;
+        protected readonly string VersionId = null;
+
         public List<InputFile> InputFiles { get; set; }
         public List<ClarifiModel> EpsSupplierData { get; set; }
 
@@ -18,10 +20,11 @@ namespace Clarify.FuzzyMatchingTest
         public IMatchingAlgorithm RoomMatchingAlgo { get; set; }
         private IMatchingAlgorithm matchingAlgorithm;
 
-        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, string strategyName)
+        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, string strategyName, string versionId)
         {
             RoomMatchingAlgo = matchingAlgorithm;
             StrategyName = strategyName;
+            VersionId = versionId;
         }
 
         public void Initialize()
@@ -50,9 +53,8 @@ namespace Clarify.FuzzyMatchingTest
                 string json = r.ReadToEnd();
                 model = JsonConvert.DeserializeObject<ClarifiModel>(json);
                 model.RoomsData.ForEach(room => room.UpdateNameIfAccessible());
+                model.SupplierFamily = supplier;
             }
-
-            //var hotelData = _elasticSearchProvider.GetHotelBySupplierIdFamily(x.SupplierId, "EPSRapid");
             return model;
         }
 

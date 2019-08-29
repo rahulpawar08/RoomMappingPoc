@@ -54,11 +54,14 @@ namespace Clarify.FuzzyMatchingTest
 
         internal Dictionary<string, string> GetKeywordMapping(string roomCode)
         {
+            //Identify the type of room
             var roomkeywords = GetRoomKeywords(roomCode);
              var result = _mapping
             .FindAll(x => roomkeywords.Contains(x.Keyword))
+            //Group the room by type, then create a dictionary with keyword and its meaning
             .GroupBy(x => x.Type).ToDictionary(x => x.Key, y => GetMeaning(y));
 
+            //return only the valid keywords
             return result.Where(x=>x.Key != "unknown").ToDictionary(x=>x.Key, y=>y.Value);
 
         }

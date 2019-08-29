@@ -34,6 +34,31 @@ namespace ConsoleApp.FuzzyAlgo
             throw new NotImplementedException();
         }
 
+        public void LogHotelLevelStats(List<HotelLevelStats> hotelLevelStatsData)
+        {
+            var hotelLevelStats = RoomMappingStatsTranslator.GetHotelLevelStats(hotelLevelStatsData);
+            foreach (var hotelLevelStat in hotelLevelStats)
+            {
+                Task.Run(() => _logger.RecordEntryAsync(hotelLevelStat)).Wait();
+            }
+        }
+
+        public void LogRoomLevelStats(List<RoomLevelStats> roomLevelStatsData)
+        {
+            var roomLevelStats = RoomMappingStatsTranslator.GetRoomLevelStats(roomLevelStatsData);
+            foreach (var roomLevelStat in roomLevelStats)
+            {
+                Task.Run(() => _logger.RecordEntryAsync(roomLevelStat)).Wait();
+            }
+        }
+
+        public void LogRoomMappingSummary(RoomMappingSummary roomMappingSummaryData)
+        {
+            var roomMappingSummary = RoomMappingStatsTranslator.GetRoomMappingSummary(roomMappingSummaryData);
+
+            Task.Run(() => _logger.RecordEntryAsync(roomMappingSummary)).Wait();
+        }
+
         public void LogRoomMatchingMetaData(List<RoomMappingResult> roomMappingResultWithThreshold, ClarifiModel epsSupplierData, ClarifiModel hotelBedsSupplierData)
         {
             throw new NotImplementedException();

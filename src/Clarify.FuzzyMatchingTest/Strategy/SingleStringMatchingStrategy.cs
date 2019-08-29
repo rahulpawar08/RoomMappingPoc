@@ -10,7 +10,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class SingleStringMatchingStrategy : BaseRoomMappingStrategy
     {
-        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm, "Single String Matching")
+        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm, string versionId) : base(matchingAlgorithm, "Single String Matching", versionId)
         {
 
         }
@@ -25,7 +25,7 @@ namespace Clarify.FuzzyMatchingTest
                 var epsSupplierData = EpsSupplierData.FirstOrDefault(x => x.HotelClarifiId == hotelBedSupplierdata.HotelClarifiId);
                 foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
-                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId);
+                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId, hotelBedRoom.Name);
 
                     foreach (var targetRoom in epsSupplierData.RoomsData)
                     {
@@ -53,6 +53,7 @@ namespace Clarify.FuzzyMatchingTest
 
                     roomMappingResult.SetMatchedRoom();
                     roomMappingResult.AppliedStrategyName = StrategyName;
+                    roomMappingResult.VersionId = VersionId;
                     roomMappingResults.Add(roomMappingResult);
                 }
                 //var roomMappingResultWithThreshold = GetResultMatchingThreshold(roomMappingResults, threshold);
@@ -108,13 +109,15 @@ namespace Clarify.FuzzyMatchingTest
         public string EpsHotelId { get; set; }
         public string EpsRoomId { get; set; }
         public string EpsRoomName { get; set; }
-
-
+        public string AppliedStrategyName { get; set; }
+        public DateTime AddedDate { get; set; }
         public List<HotelBedMappedRoomDetail> MappedRooms { get; set; }
     }
 
     public class HotelBedMappedRoomDetail
     {
+        public string HBHotelId { get; set; }
+        public string HBRoomId { get; set; }
         public string HBMatchingString { get; set; }
         public string HBRoomName { get; set; }
         public int MatchScore { get; set; }

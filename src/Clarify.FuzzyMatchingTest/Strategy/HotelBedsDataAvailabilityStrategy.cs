@@ -11,7 +11,9 @@ namespace Clarify.FuzzyMatchingTest.Strategy
     {
         public HotelBedsKeywordExtractor HotelBedsKeywordExtractor { get; set; }
         public EPSRoomTypeExtractor EpsRoomTypeExtractor { get; set; }
-        public HotelBedsDataAvailabilityStrategy(IMatchingAlgorithm matchingAlgorithm) : base(matchingAlgorithm, "HotelBeds Data Availability")
+
+
+        public HotelBedsDataAvailabilityStrategy(IMatchingAlgorithm matchingAlgorithm, string versionId) : base(matchingAlgorithm, "DynamicFieldSelection", versionId)
         {
             HotelBedsKeywordExtractor = new HotelBedsKeywordExtractor();
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();
@@ -25,17 +27,22 @@ namespace Clarify.FuzzyMatchingTest.Strategy
                 foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
 
-                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId);
+                    RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId, hotelBedRoom.Name);
 
                     var hotelBedsKeywordMapping = HotelBedsKeywordExtractor.GetKeywordMapping(hotelBedRoom.SupplierRoomId);
                     string hotelBedsMatchingString = string.Empty;
-                    if(hotelBedsKeywordMapping.Count > 0)
-                    hotelBedsMatchingString = hotelBedsKeywordMapping.Values.Aggregate((x, y) => x + " " + y);
-                    
+                    if (hotelBedsKeywordMapping.Count > 0)
+                    {
+                        //Create a matching string considering only the room type meanings
+                        hotelBedsMatchingString = hotelBedsKeywordMapping.Values.Aggregate((x, y) => x + " " + y);
+                    }
+
                     foreach (var targetRoom in epsSupplierData.RoomsData)
                     {
+                        //Create the eps matching string dynamically, considering the information available from hotelbeds.
+                        // this is done to ensure that we get relevant string for matching, the score will be higher.
                         var epsMatchingString = EpsRoomTypeExtractor.GetFields(targetRoom, hotelBedsKeywordMapping.Keys.ToList());
-                        
+
 
                         int score = (!string.IsNullOrEmpty(hotelBedsMatchingString) && !string.IsNullOrEmpty(epsMatchingString)) ?
                                           RoomMatchingAlgo.GetMatchingScore(hotelBedsMatchingString, epsMatchingString) : 0;
@@ -52,6 +59,7 @@ namespace Clarify.FuzzyMatchingTest.Strategy
                         });
                         roomMappingResult.RoomMatchingScore.OrderByDescending(s => s.MatchingScore);
                         roomMappingResult.AppliedStrategyName = StrategyName;
+                        roomMappingResult.VersionId = VersionId;
                     }
                     roomMappingResult.SetMatchedRoom();
 

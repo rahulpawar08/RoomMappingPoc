@@ -12,7 +12,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             RoomMatchingScore = new List<MatchResult>();
         }
 
-        public RoomMappingResult(string supplierName, string clarifiHotelId, string supplierHotelId, string roomId)
+        public RoomMappingResult(string supplierName, string clarifiHotelId, string supplierHotelId, string roomId, string roomName)
         {
             SupplierHotelId = supplierHotelId;
             SupplierName = supplierName;
@@ -20,6 +20,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             ClarifiHotelId = clarifiHotelId;
             RoomMatchingScore = new List<MatchResult>();
             MostMatchedRooms = new List<MostMatchedRoom>();
+            RoomName = roomName;
         }
         public string SupplierName { get; set; }
 
@@ -28,6 +29,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public string ClarifiHotelId { get; set; }
 
         public string RoomId { get; set; }
+
+        public string RoomName { get; set; }
 
         public string MostMatchedRoomId { get; set; }
 
@@ -44,6 +47,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public List<MostMatchedRoom> MostMatchedRooms { get; set; }
 
         public string AppliedStrategyName { get; set; }
+
+        public string VersionId { get; set; }
 
         public void SetMatchedRoom()
         {
@@ -82,7 +87,6 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public string EPSRoomId { get; set; }
 
         public int MatchingScore { get; set; }
-
 
         public int CompareTo(object obj)
         {

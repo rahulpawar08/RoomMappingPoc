@@ -5,8 +5,11 @@ using Clarify.FuzzyMatchingTest;
 using Clarify.FuzzyMatchingTest.Strategy;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataModels = Clarify.FuzzyMatchingTest;
 
 namespace ConsoleApp.FuzzyAlgo
 {
@@ -19,10 +22,10 @@ namespace ConsoleApp.FuzzyAlgo
             //Comment this line if MySql schema is already created
             Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
 
-            string runId = Guid.NewGuid().ToString();
+            string versionId = Guid.NewGuid().ToString();
             using (var logDB = new LogDb(Settings.GetConnectionString()))
             {
-                IDataLogger dataWriter = new MySqlLogger(new Logger(logDB));
+                IDataLogger dataLogger = new MySqlLogger(new Logger(logDB));
 
                 int expectedMatchingScore = 80;
                 //Available Fields => SQF: SquareFoot, TY: Type, BD: Bed Details, RV: Room View, DESC: Room Description
@@ -33,7 +36,7 @@ namespace ConsoleApp.FuzzyAlgo
                 //    new ElasticSearchProvider("s_clarifihotels", new List<Uri> { new Uri(@"http://tavsrvtest042:9200/") }));
 
 
-                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo());
+                BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(), versionId);
 
                 roomMappingStrategy.Initialize();
 
@@ -42,19 +45,21 @@ namespace ConsoleApp.FuzzyAlgo
 
                 var hotelBedsMappedView = roomMappingviewExtractor.GetRoomMappingWithTresholdPerHotel(roomMappingResult, expectedMatchingScore);
 
-                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView, runId);
+                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView, versionId, roomMappingStrategy.GetStrategyName());
 
                 //This is HotelBeds mapped view
                 //foreach (var kvPair in hotelBedsMappedView)
                 //{
-                //    dataWriter.WriteHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
+                //    dataLogger.LogHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
                 //}
 
-                roomMappingStrategy.EpsSupplierData.ForEach(x => dataWriter.LogSupplierRoomData(x));
-                roomMappingStrategy.HotelBedSupplierData.ForEach(x => dataWriter.LogSupplierRoomData(x));
+                roomMappingStrategy.EpsSupplierData.ForEach(x => dataLogger.LogSupplierRoomData(x));
+                roomMappingStrategy.HotelBedSupplierData.ForEach(x => dataLogger.LogSupplierRoomData(x));
 
                 foreach (var epsMappingKvPair in epsMappedView)
-                    dataWriter.LogEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
+                    dataLogger.LogEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
+
+                StatsWriter(epsMappedView, versionId, dataLogger);
 
                 Console.WriteLine($"The result of algorithm is stored in the output folder.");
 
@@ -82,6 +87,50 @@ namespace ConsoleApp.FuzzyAlgo
 
             Console.WriteLine("Room Mapping Complete.");
             Console.ReadLine();
+        }
+
+        private static void StatsWriter(Dictionary<string, List<EpsMappedRooms>> epsMappedView, string versionId, IDataLogger dataLogger)
+        {
+            List<DataModels.HotelLevelStats> hotelLevelStats = new List<DataModels.HotelLevelStats>();
+            List<DataModels.RoomLevelStats> roomLevelStats = new List<DataModels.RoomLevelStats>();
+
+            int zeroRoomCount = 0;
+            int hotelCount = 0;
+            int total = 0;
+            int totalRooms = 0;
+            int totalMappedRooms = 0;
+            double avgPercentage = 0;
+
+            foreach (var kvp in epsMappedView)
+            {
+                foreach (var map in kvp.Value)
+                {
+                    roomLevelStats.Add(new DataModels.RoomLevelStats(versionId, kvp.Key,
+                        map.EpsRoomId, map.EpsRoomName, map.MappedRooms.Count));
+                }
+
+                int totalCount = kvp.Value.Count;
+                int mappedRoomCount = kvp.Value.Where(m => m.MappedRooms.Count > 0).Count();
+                double mappedPercentage = totalCount != 0 ? (double)(mappedRoomCount * 100) / totalCount : 0;
+
+                hotelLevelStats.Add(new DataModels.HotelLevelStats(versionId, kvp.Key, totalCount, mappedRoomCount, mappedPercentage));
+
+                if (totalCount == 0)
+                    zeroRoomCount++;
+                else
+                    hotelCount++;
+                total++;
+                totalRooms += totalCount;
+                totalMappedRooms += mappedRoomCount;
+            }
+            avgPercentage = (double)(totalMappedRooms * 100) / totalRooms;
+
+            DataModels.RoomMappingSummary roomMappingSummary = new DataModels.RoomMappingSummary(versionId, zeroRoomCount, hotelCount, total, totalMappedRooms,
+                totalRooms, avgPercentage);
+
+            dataLogger.LogHotelLevelStats(hotelLevelStats);
+            dataLogger.LogRoomLevelStats(roomLevelStats);
+            dataLogger.LogRoomMappingSummary(roomMappingSummary);
         }
 
         private static object GetCommaSeperatedFields(List<string> matchingFields)
