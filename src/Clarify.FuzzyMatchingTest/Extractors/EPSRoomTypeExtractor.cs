@@ -2,6 +2,7 @@
 using HtmlAgilityPack;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class EPSRoomTypeExtractor
     {
-        private List<EpsRoomTypeMapping> _mapping = new List<EpsRoomTypeMapping>();
+        private ConcurrentBag<EpsRoomTypeMapping> _mapping = new ConcurrentBag<EpsRoomTypeMapping>();
 
         public EPSRoomTypeExtractor()
         {
@@ -26,7 +27,7 @@ namespace Clarify.FuzzyMatchingTest
 
         private void InitializeMapping()
         {
-            _mapping = JsonConvert.DeserializeObject<List<EpsRoomTypeMapping>>(File.ReadAllText(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\EPSRoomNames.txt"));
+            _mapping = new ConcurrentBag<EpsRoomTypeMapping>(JsonConvert.DeserializeObject<List<EpsRoomTypeMapping>>(File.ReadAllText(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\EPSRoomNames.txt")));
         }
 
         internal string GetFields(RoomsData targetRoom, List<string> keys)

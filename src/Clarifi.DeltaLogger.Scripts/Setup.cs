@@ -31,7 +31,7 @@ namespace Clarifi.DeltaLogger.Scripts
                 //.Register<Amenity>()
                 //.Register<BedDetail>()
                 //.Register<RoomView>()
-                .Register<RoomsData>()
+                //.Register<RoomsData>()
                 //.Register<Hotel>()
                 .Register<ClarifiModel>()
                 .Register<EpsMappedRooms>()

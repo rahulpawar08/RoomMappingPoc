@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ConsoleApp.FuzzyAlgo
+namespace ConsoleApp.ImportEHCMappingResult
 {
     internal class Settings
     {

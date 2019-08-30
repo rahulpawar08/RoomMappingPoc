@@ -5,6 +5,7 @@ using System.Linq;
 using BoomTown.FuzzySharp;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using Newtonsoft.Json;
+using System.Collections.Concurrent;
 
 namespace Clarify.FuzzyMatchingTest
 {
@@ -15,7 +16,7 @@ namespace Clarify.FuzzyMatchingTest
 
         }
 
-        public override List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
+        public override ConcurrentBag<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
         {
             List<RoomMappingResult> roomMappingResults = new List<RoomMappingResult>();
 
@@ -64,7 +65,7 @@ namespace Clarify.FuzzyMatchingTest
                 //DataWriter.WriteEPSRoomMatching($"{inputFile.ClarifiHotelId}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", EpsSupplierData, roomMappingResults);
 
             }
-            return roomMappingResults;
+            return new ConcurrentBag<RoomMappingResult>(roomMappingResults);
         }
 
         private List<RoomMappingResult> GetResultMatchingThreshold(List<RoomMappingResult> roomMappingResult, int expectedMatchingScore)

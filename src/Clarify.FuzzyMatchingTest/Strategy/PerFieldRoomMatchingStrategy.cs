@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
+using System.Collections.Concurrent;
 
 namespace Clarify.FuzzyMatchingTest
 {
@@ -18,9 +19,9 @@ namespace Clarify.FuzzyMatchingTest
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();
         }
 
-        public override List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
+        public override ConcurrentBag<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
         {
-            return ExecuteRoomMappingByRoomType();
+            return new ConcurrentBag<RoomMappingResult>(ExecuteRoomMappingByRoomType());
             //var filteredRoomTypeMappingResults = FilterResults(roomTypeMappingResults);
             //List<RoomMappingResult> roomBeddingMappingResults = ExecuteRoomMappingByBedding(filteredRoomTypeMappingResults);
 

@@ -4,22 +4,22 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Clarify.FuzzyMatchingTest
 {
     public class RoomMappingViewExtractor
     {
-        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData, Dictionary<string, List<RoomMappingResult>> roomMappingResults, string versionId, string strategyName, string matchingAlgorithm)
+        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(ConcurrentBag<ClarifiModel> epsSupplierData, Dictionary<string, ConcurrentBag<RoomMappingResult>> roomMappingResults, string versionId, string strategyName, string matchingAlgorithm)
         {
             Dictionary<string, List<EpsMappedRooms>> epsMappedRoomView = new Dictionary<string, List<EpsMappedRooms>>();
-            foreach (var kvPair in roomMappingResults)
+            Parallel.ForEach(roomMappingResults, kvPair =>
             {
                 var epsData = epsSupplierData.FirstOrDefault(x => x.HotelClarifiId == kvPair.Key);
                 var epsMappedRooms = new List<EpsMappedRooms>();
                 foreach (var epsRoom in epsData.RoomsData)
                 {
-
-                    var roomsMappedToEpsRoom = kvPair.Value.FindAll(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
+                    var roomsMappedToEpsRoom = kvPair.Value.Where(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
                     if (roomsMappedToEpsRoom != null)
                     {
                         epsMappedRooms.Add(new EpsMappedRooms()
@@ -38,30 +38,28 @@ namespace Clarify.FuzzyMatchingTest
                     }
                 }
                 epsMappedRoomView.Add(kvPair.Key, epsMappedRooms);
-            }
+            });
             return epsMappedRoomView;
         }
 
-        public Dictionary<string, List<RoomMappingResult>> GetRoomMappingWithTresholdPerHotel(List<RoomMappingResult> roomMappingResult, int expectedMatchingScore)
+        public Dictionary<string, ConcurrentBag<RoomMappingResult>> GetRoomMappingWithTresholdPerHotel(ConcurrentBag<RoomMappingResult> roomMappingResult, int expectedMatchingScore)
         {
-
-            List<RoomMappingResult> roomMappingResultWithExpectedScore = new List<RoomMappingResult>();
-            foreach (var result in roomMappingResult)
+            ConcurrentBag<RoomMappingResult> roomMappingResultWithExpectedScore = new ConcurrentBag<RoomMappingResult>();
+            Parallel.ForEach(roomMappingResult, result =>
             {
                 foreach (var score in result.RoomMatchingScore)
                 {
                     if (score.MatchingScore >= expectedMatchingScore)
                     {
-
                         if (!roomMappingResultWithExpectedScore.Any(r => r.RoomId == result.RoomId && r.ClarifiHotelId == result.ClarifiHotelId))
                         {
                             roomMappingResultWithExpectedScore.Add(result);
                         }
                     }
                 }
-            }
+            });
 
-            return roomMappingResultWithExpectedScore.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => y.ToList());
+            return roomMappingResultWithExpectedScore.GroupBy(x => x.ClarifiHotelId).ToDictionary(z => z.Key, y => new ConcurrentBag<RoomMappingResult>(y));
         }
 
         public List<RoomMappingMetadata> GetRoomMappingMetadata(List<RoomMappingResult> roomMappingResultWithThreshold, List<ClarifiModel> epsSupplierData, List<ClarifiModel> hotelBedsSupplierData)
@@ -102,10 +100,11 @@ namespace Clarify.FuzzyMatchingTest
             return roomMappingOverview;
         }
 
-        private List<HotelBedMappedRoomDetail> GetMappedRooms(RoomsData epsRoom, List<RoomMappingResult> roomsMappedToEpsRoom)
+        private List<HotelBedMappedRoomDetail> GetMappedRooms(RoomsData epsRoom, IEnumerable<RoomMappingResult> roomsMappedToEpsRoom)
         {
-            List<HotelBedMappedRoomDetail> hotelBedMappedRoomDetails = new List<HotelBedMappedRoomDetail>();
-            foreach (var room in roomsMappedToEpsRoom)
+            ConcurrentBag<HotelBedMappedRoomDetail> hotelBedMappedRoomDetails = new ConcurrentBag<HotelBedMappedRoomDetail>();
+
+            Parallel.ForEach(roomsMappedToEpsRoom, room =>
             {
                 HotelBedMappedRoomDetail hotelBedMappedRoomDetail = new HotelBedMappedRoomDetail();
                 hotelBedMappedRoomDetail.HBHotelId = room.SupplierHotelId;
@@ -118,8 +117,9 @@ namespace Clarify.FuzzyMatchingTest
                 hotelBedMappedRoomDetail.AppliedStrategyName = room.AppliedStrategyName;
                 hotelBedMappedRoomDetail.MatchingAlgorithm = room.MatchingAlgorithm;
                 hotelBedMappedRoomDetails.Add(hotelBedMappedRoomDetail);
-            }
-            return hotelBedMappedRoomDetails;
+            });
+
+            return hotelBedMappedRoomDetails.ToList();
         }
     }
 }

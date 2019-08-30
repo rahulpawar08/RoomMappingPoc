@@ -7,8 +7,7 @@ using Clarifi.RoomMappingLogger;
 using Clarifi.DeltaLogger.Scripts.Parser;
 using System.Threading.Tasks;
 
-
-namespace ConsoleApp.FuzzyAlgo
+namespace ConsoleApp.ImportEHCMappingResult
 {
     internal class MySqlLogger : IDataLogger
     {

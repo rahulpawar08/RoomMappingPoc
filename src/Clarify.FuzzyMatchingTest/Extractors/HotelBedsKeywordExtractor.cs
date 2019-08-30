@@ -1,5 +1,6 @@
 ﻿using Clarify.FuzzyMatchingTest.Data.Models;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class HotelBedsKeywordExtractor
     {
-        private List<HotelBedsKeywordMapping> _mapping = new List<HotelBedsKeywordMapping>();
+        private ConcurrentBag<HotelBedsKeywordMapping> _mapping = new ConcurrentBag<HotelBedsKeywordMapping>();
 
         public HotelBedsKeywordExtractor()
         {
@@ -22,47 +23,46 @@ namespace Clarify.FuzzyMatchingTest
             try
             {
                 var extractedMeaning = _mapping
-                              .FindAll(x => roomkeywords.Contains(x.Keyword))
+                              .Where(x => roomkeywords.Contains(x.Keyword))
                               .Where(y => y.Type == keywordType)
                               .Select(x => x.Meaning)
                               .Aggregate((m, n) => m + " " + n);
                 return extractedMeaning;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return "";
             }
-            
+
         }
 
         private List<string> GetRoomKeywords(string roomCode)
         {
             var roomInitialSplit = roomCode.Split('.');
-            var secondaryKeywords =  roomInitialSplit[1].Split('-');
-            var result =  new List<string> { roomInitialSplit[0] };
+            var secondaryKeywords = roomInitialSplit[1].Split('-');
+            var result = new List<string> { roomInitialSplit[0] };
             result.AddRange(secondaryKeywords);
             return result;
         }
 
         private void InitializeMapping()
         {
-            _mapping = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\HBKeywords.csv")
+            _mapping = new ConcurrentBag<HotelBedsKeywordMapping>(File.ReadAllLines(Directory.GetCurrentDirectory() + "\\SupplierKeywords\\HBKeywords.csv")
                            .Skip(1)
-                           .Select(x => GetMapping(x))
-                           .ToList();
+                           .Select(x => GetMapping(x)));
         }
 
         internal Dictionary<string, string> GetKeywordMapping(string roomCode)
         {
             //Identify the type of room
             var roomkeywords = GetRoomKeywords(roomCode);
-             var result = _mapping
-            .FindAll(x => roomkeywords.Contains(x.Keyword))
-            //Group the room by type, then create a dictionary with keyword and its meaning
-            .GroupBy(x => x.Type).ToDictionary(x => x.Key, y => GetMeaning(y));
+            var result = _mapping
+           .Where(x => roomkeywords.Contains(x.Keyword))
+           //Group the room by type, then create a dictionary with keyword and its meaning
+           .GroupBy(x => x.Type).ToDictionary(x => x.Key, y => GetMeaning(y));
 
             //return only the valid keywords
-            return result.Where(x=>x.Key != "unknown").ToDictionary(x=>x.Key, y=>y.Value);
+            return result.Where(x => x.Key != "unknown").ToDictionary(x => x.Key, y => y.Value);
 
         }
 

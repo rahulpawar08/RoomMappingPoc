@@ -17,7 +17,7 @@ namespace Clarify.FuzzyMatchingTest
         protected readonly string VersionId = null;
         protected readonly string MatchingAlgo = null;
 
-        public List<InputFile> InputFiles { get; set; }
+        public ConcurrentBag<InputFile> InputFiles { get; set; }
         public ConcurrentBag<ClarifiModel> EpsSupplierData { get; set; }
 
         public ConcurrentBag<ClarifiModel> HotelBedSupplierData { get; set; }
@@ -34,7 +34,7 @@ namespace Clarify.FuzzyMatchingTest
 
         public void Initialize()
         {
-            InputFiles = new List<InputFile>();
+            InputFiles = new ConcurrentBag<InputFile>();
             EpsSupplierData = new ConcurrentBag<ClarifiModel>();
             HotelBedSupplierData = new ConcurrentBag<ClarifiModel>();
             PopulateInputData();
@@ -70,7 +70,8 @@ namespace Clarify.FuzzyMatchingTest
         {
             //string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
             string[] filePaths = Directory.GetFiles(@"C:\logs\ExportedRooms\ExportedRooms");
-            foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
+
+            Parallel.ForEach(filePaths.Where(n => n.Contains("EPS")), epsFileName =>
             {
                 string[] words = epsFileName.Split('_');
 
@@ -79,10 +80,10 @@ namespace Clarify.FuzzyMatchingTest
                     string hotelBedFileName = filePaths.FirstOrDefault(n => n.Contains(words[0]) && n.Contains("HB"));
                     InputFiles.Add(new InputFile(Path.GetFileName(words[0]), epsFileName, hotelBedFileName));
                 }
-            }
+            });
         }
 
-        public abstract List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields);
+        public abstract ConcurrentBag<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields);
 
         public string GetStrategyName()
         {

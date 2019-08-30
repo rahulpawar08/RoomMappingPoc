@@ -128,23 +128,23 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("name")]
         public string Name { get; set; }
 
-        //[NestedField()]
-        //public List<Description> Descriptions { get; set; }
+        [NestedField()]
+        public List<Description> Descriptions { get; set; }
 
-        //[NestedField()]
-        //public List<Image> Images { get; set; }
+        [NestedField()]
+        public List<Image> Images { get; set; }
 
-        //[NestedField()]
-        //public List<Amenity> Amenities { get; set; }
+        [NestedField()]
+        public List<Amenity> Amenities { get; set; }
 
-        //[NestedField()]
-        //public List<BedDetail> BedDetails { get; set; }
+        [NestedField()]
+        public List<BedDetail> BedDetails { get; set; }
 
         [SimpleField("square_footage")]
         public string SquareFootage { get; set; }
 
-        //[NestedField()]
-        //public List<RoomView> RoomViews { get; set; }
+        [NestedField()]
+        public List<RoomView> RoomViews { get; set; }
 
         [SimpleField("smoking_indicator")]
         public string SmokingIndicator { get; set; }
@@ -181,8 +181,8 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("supplier_hotelid")]
         public string SupplierHotelId { get; set; }
 
-        [NestedField()]
-        public List<RoomsData> RoomsData { get; set; }
+        //[NestedField()]
+        //public List<RoomsData> RoomsData { get; set; }
 
         [SimpleField("supplier_name")]
         public string SupplierFamily { get; set; }

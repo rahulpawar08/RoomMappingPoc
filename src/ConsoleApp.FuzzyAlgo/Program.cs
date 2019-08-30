@@ -17,10 +17,12 @@ namespace ConsoleApp.FuzzyAlgo
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"Program Started. Time:{DateTime.Now}");
+
             new Setup().Run();
 
             //Comment this line if MySql schema is already created
-            Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
+            //Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
 
             string versionId = Guid.NewGuid().ToString();
             using (var logDB = new LogDb(Settings.GetConnectionString()))
@@ -31,10 +33,6 @@ namespace ConsoleApp.FuzzyAlgo
                 //Available Fields => SQF: SquareFoot, TY: Type, BD: Bed Details, RV: Room View, DESC: Room Description
                 List<string> matchingFields = new List<string>() { "SQF_TY_BD_RV" };
                 var roomMappingviewExtractor = new RoomMappingViewExtractor();
-
-                //BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(),
-                //    new ElasticSearchProvider("s_clarifihotels", new List<Uri> { new Uri(@"http://tavsrvtest042:9200/") }));
-
 
                 BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(), versionId);
 
@@ -53,8 +51,8 @@ namespace ConsoleApp.FuzzyAlgo
                 //    dataLogger.LogHotelBedsRoomMatching($"{kvPair.Key}_{expectedMatchingScore}_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", kvPair.Value);
                 //}
 
-                roomMappingStrategy.EpsSupplierData.ForEach(x => dataLogger.LogSupplierRoomData(x));
-                roomMappingStrategy.HotelBedSupplierData.ForEach(x => dataLogger.LogSupplierRoomData(x));
+                roomMappingStrategy.EpsSupplierData.ToList().ForEach(x => dataLogger.LogSupplierRoomData(x));
+                roomMappingStrategy.HotelBedSupplierData.ToList().ForEach(x => dataLogger.LogSupplierRoomData(x));
 
                 foreach (var epsMappingKvPair in epsMappedView)
                     dataLogger.LogEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
@@ -85,7 +83,7 @@ namespace ConsoleApp.FuzzyAlgo
                 #endregion
             }
 
-            Console.WriteLine("Room Mapping Complete.");
+            Console.WriteLine($"Room Mapping Complete. Time:{DateTime.Now}");
             Console.ReadLine();
         }
 

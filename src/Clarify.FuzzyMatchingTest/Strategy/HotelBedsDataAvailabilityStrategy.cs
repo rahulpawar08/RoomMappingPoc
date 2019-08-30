@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
 
 namespace Clarify.FuzzyMatchingTest.Strategy
 {
@@ -18,15 +20,14 @@ namespace Clarify.FuzzyMatchingTest.Strategy
             HotelBedsKeywordExtractor = new HotelBedsKeywordExtractor();
             EpsRoomTypeExtractor = new EPSRoomTypeExtractor();
         }
-        public override List<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
+        public override ConcurrentBag<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields)
         {
-            List<RoomMappingResult> roomMappingResults = new List<RoomMappingResult>();
-            foreach (var hotelBedSupplierdata in HotelBedSupplierData)
+            ConcurrentBag<RoomMappingResult> roomMappingResults = new ConcurrentBag<RoomMappingResult>();
+            Parallel.ForEach(HotelBedSupplierData, hotelBedSupplierdata =>
             {
                 var epsSupplierData = EpsSupplierData.FirstOrDefault(x => x.HotelClarifiId == hotelBedSupplierdata.HotelClarifiId);
                 foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
                 {
-
                     RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId, hotelBedRoom.Name);
 
                     var hotelBedsKeywordMapping = HotelBedsKeywordExtractor.GetKeywordMapping(hotelBedRoom.SupplierRoomId);
@@ -66,7 +67,7 @@ namespace Clarify.FuzzyMatchingTest.Strategy
 
                     roomMappingResults.Add(roomMappingResult);
                 }
-            }
+            });
 
             return roomMappingResults;
         }

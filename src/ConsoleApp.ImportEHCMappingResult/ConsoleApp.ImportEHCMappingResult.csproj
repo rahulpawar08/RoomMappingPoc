@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>ConsoleApp.ImportEHCMappingResult</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Clarifi.DeltaLogger.MySql\Clarifi.RoomMappingLogger.MySql.csproj" />
+    <ProjectReference Include="..\Clarifi.DeltaLogger.Scripts\Clarifi.RoomMappingLogger.Scripts.csproj" />
+    <ProjectReference Include="..\Clarify.FuzzyMatchingTest\Clarify.FuzzyMatchingTest.csproj" />
+  </ItemGroup>
+
+</Project>
