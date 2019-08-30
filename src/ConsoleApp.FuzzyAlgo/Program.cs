@@ -122,7 +122,7 @@ namespace ConsoleApp.FuzzyAlgo
             {
                 foreach (var map in kvp.Value)
                 {
-                    logs1.Add($"{kvp.Key},{map.EpsRoomId},{map.EpsRoomName},{map.MappedRooms.Count}");
+                    logs1.Add($"{kvp.Key},{map.EpsRoomId},\"{map.EpsRoomName}\",{map.MappedRooms.Count}");
                 }
                 int totalCount = kvp.Value.Count;
                 int mappedRoomCount = kvp.Value.Where(m => m.MappedRooms.Count > 0).Count();
