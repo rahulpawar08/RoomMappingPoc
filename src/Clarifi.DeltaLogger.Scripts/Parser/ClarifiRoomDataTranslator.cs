@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using LoggerScripts = Clarifi.RoomMappingLogger.Scripts;
 using DataModels = Clarify.FuzzyMatchingTest.Data.Models;
+using System.Text.RegularExpressions;
 
 namespace Clarifi.DeltaLogger.Scripts.Parser
 {
@@ -25,11 +26,11 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
             {
                 AddedDate = roomsData.AddedDate,
                 ModifiedDate = roomsData.ModifiedDate,
-                Amenities = GetAmenities(roomsData.Amenities),
-                RoomViews = GetRoomViews(roomsData.RoomViews),
-                BedDetails = GetBedDetails(roomsData.BedDetails),
-                Descriptions = GetDescriptions(roomsData.Descriptions),
-                Images = GetImages(roomsData.Images),
+                //Amenities = GetAmenities(roomsData.Amenities),
+                //RoomViews = GetRoomViews(roomsData.RoomViews),
+                //BedDetails = GetBedDetails(roomsData.BedDetails),
+                //Descriptions = GetDescriptions(roomsData.Descriptions),
+                //Images = GetImages(roomsData.Images),
                 ClarifiRoomId = roomsData.ClarifiRoomId,
                 IsDisabled = roomsData.IsDisabled,
                 Name = roomsData.Name,
@@ -39,7 +40,6 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 SupplierName = roomsData.SupplierFamily,
                 SupplierRoomId = roomsData.SupplierRoomId,
                 //CategoryId = activityItinerary.Category?.Id,
-                //IsEnableForDisplay
             };
         }
 
@@ -193,14 +193,14 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 AddressLine1 = clarifiModelData.AddressLine1,
                 AddressLine2 = clarifiModelData.AddressLine2,
                 CityCode = clarifiModelData.CityCode,
-                CityName = clarifiModelData.CityName,
+                CityName = clarifiModelData.City,
                 StateCode = clarifiModelData.StateCode,
                 StateName = clarifiModelData.StateName,
-                CountryCode = clarifiModelData.CountryCode,
+                CountryCode = clarifiModelData.Country,
                 ZipCode = clarifiModelData.ZipCode,
                 Latitude = clarifiModelData.Latitude,
                 Longitude = clarifiModelData.Longitude,
-                StarRating = clarifiModelData.RatingValue,
+                StarRating = clarifiModelData.Rating,
                 IsUIEnabled = clarifiModelData.IsUIEnabled
             };
         }

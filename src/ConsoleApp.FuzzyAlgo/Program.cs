@@ -45,7 +45,7 @@ namespace ConsoleApp.FuzzyAlgo
 
                 var hotelBedsMappedView = roomMappingviewExtractor.GetRoomMappingWithTresholdPerHotel(roomMappingResult, expectedMatchingScore);
 
-                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView, versionId, roomMappingStrategy.GetStrategyName());
+                var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(roomMappingStrategy.EpsSupplierData, hotelBedsMappedView, versionId, roomMappingStrategy.GetStrategyName(), roomMappingStrategy.GetMatchingAlgorithmName());
 
                 //This is HotelBeds mapped view
                 //foreach (var kvPair in hotelBedsMappedView)

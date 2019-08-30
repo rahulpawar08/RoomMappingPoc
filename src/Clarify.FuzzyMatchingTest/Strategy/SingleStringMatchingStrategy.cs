@@ -10,7 +10,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class SingleStringMatchingStrategy : BaseRoomMappingStrategy
     {
-        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm, string versionId) : base(matchingAlgorithm, "Single String Matching", versionId)
+        public SingleStringMatchingStrategy(IMatchingAlgorithm matchingAlgorithm, string versionId) : base(matchingAlgorithm, "Single String Matching", versionId, "FuzzyAlgorithm")
         {
 
         }
@@ -53,6 +53,7 @@ namespace Clarify.FuzzyMatchingTest
 
                     roomMappingResult.SetMatchedRoom();
                     roomMappingResult.AppliedStrategyName = StrategyName;
+                    roomMappingResult.MatchingAlgorithm = MatchingAlgo;
                     roomMappingResult.VersionId = VersionId;
                     roomMappingResults.Add(roomMappingResult);
                 }
@@ -106,10 +107,13 @@ namespace Clarify.FuzzyMatchingTest
     public class EpsMappedRooms
     {
         public string VersionId { get; set; }
+        public string ClarifiHotelId { get; set; }
         public string EpsHotelId { get; set; }
         public string EpsRoomId { get; set; }
         public string EpsRoomName { get; set; }
+        public string EpsHotelName { get; set; }
         public string AppliedStrategyName { get; set; }
+        public string MatchingAlgorithm { get; set; }
         public DateTime AddedDate { get; set; }
         public List<HotelBedMappedRoomDetail> MappedRooms { get; set; }
     }
@@ -124,5 +128,6 @@ namespace Clarify.FuzzyMatchingTest
         public string EpsMatchingString { get; set; }
         public string MatchingFields { get; set; }
         public string AppliedStrategyName { get; set; }
+        public string MatchingAlgorithm { get; set; }
     }
 }

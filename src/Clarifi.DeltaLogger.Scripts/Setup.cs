@@ -26,13 +26,13 @@ namespace Clarifi.DeltaLogger.Scripts
             // Add type registrations here.
             KnownTypes
                 .Instance
-                .Register<Description>()
-                .Register<Image>()
-                .Register<Amenity>()
-                .Register<BedDetail>()
-                .Register<RoomView>()
+                //.Register<Description>()
+                //.Register<Image>()
+                //.Register<Amenity>()
+                //.Register<BedDetail>()
+                //.Register<RoomView>()
                 .Register<RoomsData>()
-                .Register<Hotel>()
+                //.Register<Hotel>()
                 .Register<ClarifiModel>()
                 .Register<EpsMappedRooms>()
                 .Register<HotelBedsMappedRoomDetail>()

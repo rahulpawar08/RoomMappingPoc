@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
 
 namespace Clarify.FuzzyMatchingTest
 {
@@ -12,37 +15,39 @@ namespace Clarify.FuzzyMatchingTest
     {
         protected readonly string StrategyName = null;
         protected readonly string VersionId = null;
+        protected readonly string MatchingAlgo = null;
 
         public List<InputFile> InputFiles { get; set; }
-        public List<ClarifiModel> EpsSupplierData { get; set; }
+        public ConcurrentBag<ClarifiModel> EpsSupplierData { get; set; }
 
-        public List<ClarifiModel> HotelBedSupplierData { get; set; }
+        public ConcurrentBag<ClarifiModel> HotelBedSupplierData { get; set; }
         public IMatchingAlgorithm RoomMatchingAlgo { get; set; }
         private IMatchingAlgorithm matchingAlgorithm;
 
-        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, string strategyName, string versionId)
+        public BaseRoomMappingStrategy(IMatchingAlgorithm matchingAlgorithm, string strategyName, string versionId, string matchingAlgo)
         {
             RoomMatchingAlgo = matchingAlgorithm;
             StrategyName = strategyName;
             VersionId = versionId;
+            MatchingAlgo = matchingAlgo;
         }
 
         public void Initialize()
         {
             InputFiles = new List<InputFile>();
-            EpsSupplierData = new List<ClarifiModel>();
-            HotelBedSupplierData = new List<ClarifiModel>();
+            EpsSupplierData = new ConcurrentBag<ClarifiModel>();
+            HotelBedSupplierData = new ConcurrentBag<ClarifiModel>();
             PopulateInputData();
             PopulateSupplierData();
         }
 
         private void PopulateSupplierData()
         {
-            foreach (var inputFile in InputFiles)
+            Parallel.ForEach(InputFiles, inputFile =>
             {
                 EpsSupplierData.Add(GetClarifiModel(inputFile.EpsDataFileName, "EPSRapid"));
                 HotelBedSupplierData.Add(GetClarifiModel(inputFile.HbDataFileName, "HotelBeds"));
-            }
+            });
         }
 
         private ClarifiModel GetClarifiModel(string fileName, string supplier)
@@ -54,13 +59,17 @@ namespace Clarify.FuzzyMatchingTest
                 model = JsonConvert.DeserializeObject<ClarifiModel>(json);
                 model.RoomsData.ForEach(room => room.UpdateNameIfAccessible());
                 model.SupplierFamily = supplier;
+                model.HotelName = Regex.Replace((model.HotelName ?? string.Empty), "\"", string.Empty, RegexOptions.IgnoreCase);
+                foreach (var roomData in model.RoomsData)
+                    roomData.Name = Regex.Replace((roomData.Name ?? string.Empty), "\"", string.Empty, RegexOptions.IgnoreCase);
             }
             return model;
         }
 
         private void PopulateInputData()
         {
-            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
+            //string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
+            string[] filePaths = Directory.GetFiles(@"C:\logs\ExportedRooms\ExportedRooms");
             foreach (var epsFileName in filePaths.Where(n => n.Contains("EPS")))
             {
                 string[] words = epsFileName.Split('_');
@@ -78,6 +87,11 @@ namespace Clarify.FuzzyMatchingTest
         public string GetStrategyName()
         {
             return StrategyName;
+        }
+
+        public string GetMatchingAlgorithmName()
+        {
+            return MatchingAlgo;
         }
     }
 }

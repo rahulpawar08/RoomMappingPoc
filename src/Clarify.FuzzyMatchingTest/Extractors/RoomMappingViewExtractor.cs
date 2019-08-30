@@ -1,5 +1,6 @@
 ﻿using Clarify.FuzzyMatchingTest.Data.Models;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Clarify.FuzzyMatchingTest
 {
     public class RoomMappingViewExtractor
     {
-        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData, Dictionary<string, List<RoomMappingResult>> roomMappingResults, string versionId, string strategyName)
+        public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(List<ClarifiModel> epsSupplierData, Dictionary<string, List<RoomMappingResult>> roomMappingResults, string versionId, string strategyName, string matchingAlgorithm)
         {
             Dictionary<string, List<EpsMappedRooms>> epsMappedRoomView = new Dictionary<string, List<EpsMappedRooms>>();
             foreach (var kvPair in roomMappingResults)
@@ -24,11 +25,14 @@ namespace Clarify.FuzzyMatchingTest
                         epsMappedRooms.Add(new EpsMappedRooms()
                         {
                             VersionId = versionId,
+                            ClarifiHotelId = epsData.HotelClarifiId,
                             EpsHotelId = epsRoom.SupplierId,
                             EpsRoomId = epsRoom.SupplierRoomId,
                             EpsRoomName = epsRoom.Name,
-                            AppliedStrategyName= strategyName,
-                            AddedDate= DateTime.UtcNow,
+                            EpsHotelName = epsData.HotelName,
+                            AppliedStrategyName = strategyName,
+                            MatchingAlgorithm = matchingAlgorithm,
+                            AddedDate = DateTime.UtcNow,
                             MappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom)
                         });
                     }
@@ -112,6 +116,7 @@ namespace Clarify.FuzzyMatchingTest
                 hotelBedMappedRoomDetail.MatchScore = room.HighestMatchedScore;
                 hotelBedMappedRoomDetail.EpsMatchingString = room.EpsMatchingStringForHighestMatch;
                 hotelBedMappedRoomDetail.AppliedStrategyName = room.AppliedStrategyName;
+                hotelBedMappedRoomDetail.MatchingAlgorithm = room.MatchingAlgorithm;
                 hotelBedMappedRoomDetails.Add(hotelBedMappedRoomDetail);
             }
             return hotelBedMappedRoomDetails;

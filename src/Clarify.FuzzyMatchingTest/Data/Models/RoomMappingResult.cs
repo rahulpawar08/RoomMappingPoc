@@ -48,6 +48,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
 
         public string AppliedStrategyName { get; set; }
 
+        public string MatchingAlgorithm { get; set; }
+
         public string VersionId { get; set; }
 
         public void SetMatchedRoom()

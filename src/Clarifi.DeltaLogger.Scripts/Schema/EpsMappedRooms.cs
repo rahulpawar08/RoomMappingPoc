@@ -10,6 +10,9 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("version_id")]
         public string VersionId { get; set; }
 
+        [SimpleField("clarifi_hotelid")]
+        public string ClarifiHotelId { get; set; }
+
         [SimpleField("eps_hotelid")]
         public string EpsHotelId { get; set; }
 
@@ -19,8 +22,14 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("eps_room_name")]
         public string EpsRoomName { get; set; }
 
+        [SimpleField("eps_hotel_name")]
+        public string EpsHotelName { get; set; }
+
         [SimpleField("applied_strategy_name")]
         public string AppliedStrategyName { get; set; }
+
+        [SimpleField("matching_algorithm")]
+        public string MatchingAlgorithm { get; set; }
 
         [SimpleField("added_date")]
         public DateTime AddedDate { get; set; }
@@ -55,5 +64,8 @@ namespace Clarifi.RoomMappingLogger.Scripts
 
         [SimpleField("applied_strategy_name")]
         public string AppliedStrategyName { get; set; }
+
+        [SimpleField("matching_algorithm")]
+        public string MatchingAlgorithm { get; set; }
     }
 }
