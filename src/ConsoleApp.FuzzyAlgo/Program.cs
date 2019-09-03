@@ -24,6 +24,8 @@ namespace ConsoleApp.FuzzyAlgo
             //Comment this line if MySql schema is already created
             Task.Run(() => KnownTypes.ProvisionAsync("all", new LogDb())).Wait();
 
+            string inputFilesDirectory = args[0];
+
             string versionId = Guid.NewGuid().ToString();
             using (var logDB = new LogDb(Settings.GetConnectionString()))
             {
@@ -36,7 +38,7 @@ namespace ConsoleApp.FuzzyAlgo
 
                 BaseRoomMappingStrategy roomMappingStrategy = new HotelBedsDataAvailabilityStrategy(new FuzzyStringMatchingAlgo(), versionId);
 
-                roomMappingStrategy.Initialize(versionId);
+                roomMappingStrategy.Initialize(versionId, inputFilesDirectory);
 
                 Console.WriteLine($"Starting with Room Mapping with fields - {GetCommaSeperatedFields(matchingFields)}.");
                 var roomMappingResult = roomMappingStrategy.ExecuteHotelBedEanRoomMapping(matchingFields);

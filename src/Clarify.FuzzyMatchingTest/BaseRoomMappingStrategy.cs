@@ -32,12 +32,12 @@ namespace Clarify.FuzzyMatchingTest
             MatchingAlgo = matchingAlgo;
         }
 
-        public void Initialize(string versionId)
+        public void Initialize(string versionId, string inputFilesDirectoryPath)
         {
             InputFiles = new ConcurrentBag<InputFile>();
             EpsSupplierData = new ConcurrentBag<ClarifiModel>();
             HotelBedSupplierData = new ConcurrentBag<ClarifiModel>();
-            PopulateInputData();
+            PopulateInputData(inputFilesDirectoryPath);
             PopulateSupplierData(versionId);
         }
 
@@ -70,10 +70,10 @@ namespace Clarify.FuzzyMatchingTest
             return model;
         }
 
-        private void PopulateInputData()
+        private void PopulateInputData(string inputFilesDirectoryPath)
         {
-            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
-            //string[] filePaths = Directory.GetFiles(@"C:\logs\ExportedRooms\ExportedRooms");
+            //string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
+            string[] filePaths = Directory.GetFiles(inputFilesDirectoryPath);
 
             Parallel.ForEach(filePaths.Where(n => n.Contains("EPS")), epsFileName =>
             {
