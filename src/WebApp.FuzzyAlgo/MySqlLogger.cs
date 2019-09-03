@@ -6,7 +6,7 @@ using Clarify.FuzzyMatchingTest.Data.Models;
 using Clarifi.RoomMappingLogger;
 using Clarifi.DeltaLogger.Scripts.Parser;
 using System.Threading.Tasks;
-
+using System.Linq;
 
 namespace WebApp.FuzzyAlgo
 {
@@ -23,14 +23,8 @@ namespace WebApp.FuzzyAlgo
         {
             if (epsMappedRooms != null && epsMappedRooms.Count > 0)
             {
-                epsMappedRooms.ForEach(epsMappedRoom =>
-                {
-                    var epsMappedRoomData = EpsMappedRoomsTranslator.GetEpsMappedRoom(epsMappedRoom);
-                    if (epsMappedRoomData != null)
-                    {
-                        Task.Run(() => _logger.RecordEntryAsync(epsMappedRoomData)).Wait();
-                    }
-                });
+                var epsMappedRoomDatas = epsMappedRooms.Select(x => EpsMappedRoomsTranslator.GetEpsMappedRoom(x)).ToList();
+                Task.Run(() => _logger.RecordEntryAsync(epsMappedRoomDatas)).Wait();
             }
         }
 
@@ -69,11 +63,13 @@ namespace WebApp.FuzzyAlgo
             throw new NotImplementedException();
         }
 
-        public void LogSupplierRoomData(ClarifiModel supplierRoomData)
+        public void LogSupplierRoomData(List<ClarifiModel> supplierRoomsData)
         {
-            var supplier_roomdata = ClarifiRoomDataTranslator.GetClarifiModel(supplierRoomData);
-
-            Task.Run(() => _logger.RecordEntryAsync(supplier_roomdata)).Wait();
+            if (supplierRoomsData != null && supplierRoomsData.Count > 0)
+            {
+                var supplierRoomsInfo = supplierRoomsData.Select(x => ClarifiRoomDataTranslator.GetClarifiModel(x)).ToList();
+                Task.Run(() => _logger.RecordEntryAsync(supplierRoomsInfo)).Wait();
+            }
         }
     }
 }

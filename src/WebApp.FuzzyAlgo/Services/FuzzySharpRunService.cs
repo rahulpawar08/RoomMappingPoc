@@ -53,7 +53,7 @@ namespace WebApp.FuzzyAlgo.Services
                 {
                     IDataLogger dataLogger = new MySqlLogger(new Logger(logDB));
 
-                    strategy.Initialize();
+                    strategy.Initialize(versionId, @"C:\Clarifi\RoomMapping\ExportedRooms");
 
                     var roomMappingResult = strategy.ExecuteHotelBedEanRoomMapping(fields);
 
@@ -61,13 +61,13 @@ namespace WebApp.FuzzyAlgo.Services
 
                     var epsMappedView = roomMappingviewExtractor.GetEpsMappedRooms(strategy.EpsSupplierData, hotelBedsMappedView, versionId, strategy.GetStrategyName(), strategy.GetMatchingAlgorithmName());
 
-                    strategy.EpsSupplierData.ToList().ForEach(x => dataLogger.LogSupplierRoomData(x));
-                    strategy.HotelBedSupplierData.ToList().ForEach(x => dataLogger.LogSupplierRoomData(x));
+                    dataLogger.LogSupplierRoomData(strategy.EpsSupplierData.ToList());
+                    dataLogger.LogSupplierRoomData(strategy.HotelBedSupplierData.ToList());
 
                     foreach (var epsMappingKvPair in epsMappedView)
                         dataLogger.LogEPSRoomMatching($"{epsMappingKvPair.Key}_'EPSMappedView'_{DateTime.Now.ToString("yyyyMMddTHHmmss")}.json", epsMappingKvPair.Value);
 
-                    summary = StatsWriter(epsMappedView, versionId, dataLogger);
+                    summary = StatsWriter(epsMappedView, versionId, dataLogger, strategy.GetStrategyName(), strategy.GetMatchingAlgorithmName());
                 }
 
                 return new AlgoRunResponse
@@ -89,7 +89,8 @@ namespace WebApp.FuzzyAlgo.Services
             };
         }
 
-        private static DataModels.RoomMappingSummary StatsWriter(Dictionary<string, List<EpsMappedRooms>> epsMappedView, string versionId, IDataLogger dataLogger)
+        private static RoomMappingSummary StatsWriter(Dictionary<string, List<EpsMappedRooms>> epsMappedView, string versionId,
+            IDataLogger dataLogger, string strategyName, string algorithmName)
         {
             List<DataModels.HotelLevelStats> hotelLevelStats = new List<DataModels.HotelLevelStats>();
             List<DataModels.RoomLevelStats> roomLevelStats = new List<DataModels.RoomLevelStats>();
@@ -99,34 +100,56 @@ namespace WebApp.FuzzyAlgo.Services
             int total = 0;
             int totalRooms = 0;
             int totalMappedRooms = 0;
+            int totalRoomsWithoutMatchingRooms = 0;
             double avgPercentage = 0;
 
             foreach (var kvp in epsMappedView)
             {
-                foreach (var map in kvp.Value)
+                if (kvp.Key != null)
                 {
-                    roomLevelStats.Add(new DataModels.RoomLevelStats(versionId, kvp.Key,
-                        map.EpsRoomId, map.EpsRoomName, map.MappedRooms.Count));
+                    string appliedStrategyName = string.Empty;
+                    string matchingAlgorithm = string.Empty;
+
+                    int hbRoomsCount = 0;
+                    foreach (var map in kvp.Value)
+                    {
+                        roomLevelStats.Add(new DataModels.RoomLevelStats(versionId, kvp.Key,
+                            map.EpsRoomId, map.EpsRoomName, map.MappedRooms.Count, map.AppliedStrategyName,
+                            map.MatchingAlgorithm, map.MatchingStatus.ToString(), map.HBRoomsCount));
+
+                        if (map.MatchingStatus == MatchingStatus.HBRoomsNotAvailable)
+                            totalRoomsWithoutMatchingRooms++;
+
+                        hbRoomsCount = map.HBRoomsCount;
+                        appliedStrategyName = map.AppliedStrategyName;
+                        matchingAlgorithm = map.MatchingAlgorithm;
+                    }
+
+                    int totalCount = kvp.Value.Count;
+                    int mappedRoomCount = kvp.Value.Where(m => m.MappedRooms.Count > 0).Count();
+                    double mappedPercentage = totalCount != 0 ? (double)(mappedRoomCount * 100) / totalCount : 0;
+
+                    hotelLevelStats.Add(new DataModels.HotelLevelStats(versionId, kvp.Key, totalCount,
+                        mappedRoomCount, mappedPercentage, hbRoomsCount, appliedStrategyName, matchingAlgorithm));
+
+                    if (totalCount == 0)
+                        zeroRoomCount++;
+                    else
+                        hotelCount++;
+                    total++;
+                    totalRooms += totalCount;
+                    totalMappedRooms += mappedRoomCount;
                 }
-
-                int totalCount = kvp.Value.Count;
-                int mappedRoomCount = kvp.Value.Where(m => m.MappedRooms.Count > 0).Count();
-                double mappedPercentage = totalCount != 0 ? (double)(mappedRoomCount * 100) / totalCount : 0;
-
-                hotelLevelStats.Add(new DataModels.HotelLevelStats(versionId, kvp.Key, totalCount, mappedRoomCount, mappedPercentage));
-
-                if (totalCount == 0)
-                    zeroRoomCount++;
                 else
-                    hotelCount++;
-                total++;
-                totalRooms += totalCount;
-                totalMappedRooms += mappedRoomCount;
+                {
+                    Console.WriteLine("Null Value Found");
+                }
             }
             avgPercentage = (double)(totalMappedRooms * 100) / totalRooms;
 
-            DataModels.RoomMappingSummary roomMappingSummary = new DataModels.RoomMappingSummary(versionId, zeroRoomCount, hotelCount, total, totalMappedRooms,
-                totalRooms, avgPercentage);
+            DataModels.RoomMappingSummary roomMappingSummary = new DataModels.RoomMappingSummary(versionId, zeroRoomCount, hotelCount,
+                total, totalMappedRooms, totalRooms, avgPercentage, strategyName, algorithmName, totalRoomsWithoutMatchingRooms,
+                (totalRooms - totalMappedRooms - totalRoomsWithoutMatchingRooms));
 
             dataLogger.LogHotelLevelStats(hotelLevelStats);
             dataLogger.LogRoomLevelStats(roomLevelStats);
