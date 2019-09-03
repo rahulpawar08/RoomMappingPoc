@@ -32,25 +32,25 @@ namespace Clarify.FuzzyMatchingTest
             MatchingAlgo = matchingAlgo;
         }
 
-        public void Initialize()
+        public void Initialize(string versionId)
         {
             InputFiles = new ConcurrentBag<InputFile>();
             EpsSupplierData = new ConcurrentBag<ClarifiModel>();
             HotelBedSupplierData = new ConcurrentBag<ClarifiModel>();
             PopulateInputData();
-            PopulateSupplierData();
+            PopulateSupplierData(versionId);
         }
 
-        private void PopulateSupplierData()
+        private void PopulateSupplierData(string versionId)
         {
             Parallel.ForEach(InputFiles, inputFile =>
             {
-                EpsSupplierData.Add(GetClarifiModel(inputFile.EpsDataFileName, "EPSRapid"));
-                HotelBedSupplierData.Add(GetClarifiModel(inputFile.HbDataFileName, "HotelBeds"));
+                EpsSupplierData.Add(GetClarifiModel(inputFile.EpsDataFileName, "EPSRapid", versionId));
+                HotelBedSupplierData.Add(GetClarifiModel(inputFile.HbDataFileName, "HotelBeds", versionId));
             });
         }
 
-        private ClarifiModel GetClarifiModel(string fileName, string supplier)
+        private ClarifiModel GetClarifiModel(string fileName, string supplier, string versionId)
         {
             ClarifiModel model = null;
             using (StreamReader r = new StreamReader(fileName))
@@ -59,9 +59,13 @@ namespace Clarify.FuzzyMatchingTest
                 model = JsonConvert.DeserializeObject<ClarifiModel>(json);
                 model.RoomsData.ForEach(room => room.UpdateNameIfAccessible());
                 model.SupplierFamily = supplier;
+                model.VersionId = versionId;
                 model.HotelName = Regex.Replace((model.HotelName ?? string.Empty), "\"", string.Empty, RegexOptions.IgnoreCase);
                 foreach (var roomData in model.RoomsData)
+                {
+                    roomData.VersionId = versionId;
                     roomData.Name = Regex.Replace((roomData.Name ?? string.Empty), "\"", string.Empty, RegexOptions.IgnoreCase);
+                }
             }
             return model;
         }

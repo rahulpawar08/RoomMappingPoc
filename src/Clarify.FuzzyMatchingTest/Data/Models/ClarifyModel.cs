@@ -54,6 +54,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
     }
     public class RoomsData
     {
+        public string VersionId { get; set; }
         public int ClarifiRoomId { get; set; }
         public string SupplierFamily { get; set; }
         public string SupplierId { get; set; }
@@ -63,8 +64,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         public List<Image> Images { get; set; }
         public List<Amenity> Amenities { get; set; }
         public List<BedDetail> BedDetails { get; set; }
-        public string SquareFootage { get; set; }
         public List<RoomView> RoomViews { get; set; }
+        public string SquareFootage { get; set; }
         public string SmokingIndicator { get; set; }
         public bool IsDisabled { get; set; }
         public DateTime AddedDate { get; set; }
@@ -74,8 +75,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         {
             StringBuilder strBuilder = new StringBuilder();
 
-            if(fields.Contains("SQF"))
-            strBuilder.Append(SquareFootage);
+            if (fields.Contains("SQF"))
+                strBuilder.Append(SquareFootage);
 
             if (fields.Contains("TY"))
                 strBuilder.Append(" " + Name);
@@ -84,7 +85,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
             {
                 if (BedDetails != null && BedDetails.Count > 0)
                 {
-                    BedDetails.ForEach(b => strBuilder.Append(" " +b.Desc));
+                    BedDetails.ForEach(b => strBuilder.Append(" " + b.Desc));
                 }
             }
 
@@ -131,23 +132,24 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
 
     public class ClarifiModel
     {
+        public string VersionId { get; set; }
         public string HotelClarifiId { get; set; }
         public string SupplierId { get; set; }
         public List<RoomsData> RoomsData { get; set; }
 
         public string SupplierFamily { get; set; }
-        public string PropertyType { set; get; }
+        //public string PropertyType { set; get; }
         public string HotelName { get; set; }
-        public string AddressLine1 { set; get; }
-        public string AddressLine2 { set; get; }
-        public string CityCode { set; get; }
+        //public string AddressLine1 { set; get; }
+        //public string AddressLine2 { set; get; }
+        //public string CityCode { set; get; }
         public string City { set; get; }
-        public string StateCode { set; get; }
-        public string StateName { set; get; }
+        //public string StateCode { set; get; }
+        //public string StateName { set; get; }
         public string Country { set; get; }
-        public string ZipCode { get; set; }
-        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+        //public string ZipCode { get; set; }
+        //public double Latitude { get; set; }
+        //public double Longitude { get; set; }
         public double Rating { get; set; }
         public bool IsUIEnabled { get; set; }
         // public Hotel hotel { get; set; }

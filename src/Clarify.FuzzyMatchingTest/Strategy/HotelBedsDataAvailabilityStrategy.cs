@@ -26,7 +26,7 @@ namespace Clarify.FuzzyMatchingTest.Strategy
             Parallel.ForEach(HotelBedSupplierData, hotelBedSupplierdata =>
             {
                 var epsSupplierData = EpsSupplierData.FirstOrDefault(x => x.HotelClarifiId == hotelBedSupplierdata.HotelClarifiId);
-                foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
+                Parallel.ForEach(hotelBedSupplierdata.RoomsData, hotelBedRoom =>
                 {
                     RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId, hotelBedRoom.Name);
 
@@ -62,11 +62,12 @@ namespace Clarify.FuzzyMatchingTest.Strategy
                         roomMappingResult.AppliedStrategyName = StrategyName;
                         roomMappingResult.VersionId = VersionId;
                         roomMappingResult.MatchingAlgorithm = MatchingAlgo;
+                        roomMappingResult.HBRoomsCount = hotelBedSupplierdata.RoomsData.Count;
                     }
                     roomMappingResult.SetMatchedRoom();
 
                     roomMappingResults.Add(roomMappingResult);
-                }
+                });
             });
 
             return roomMappingResults;

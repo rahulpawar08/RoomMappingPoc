@@ -9,7 +9,7 @@ namespace Clarify.FuzzyMatchingTest
     public interface IRoomMappingStrategy
     {
         ConcurrentBag<RoomMappingResult> ExecuteHotelBedEanRoomMapping(List<string> matchingFields);
-        void Initialize();
+        void Initialize(string versionId);
         string GetStrategyName();
     }
 }

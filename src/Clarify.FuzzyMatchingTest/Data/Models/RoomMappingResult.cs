@@ -50,6 +50,8 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
 
         public string MatchingAlgorithm { get; set; }
 
+        public int HBRoomsCount { get; set; }
+
         public string VersionId { get; set; }
 
         public void SetMatchedRoom()

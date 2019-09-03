@@ -31,6 +31,12 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("matching_algorithm")]
         public string MatchingAlgorithm { get; set; }
 
+        [SimpleField("matching_status")]
+        public string MatchingStatus { get; set; }
+
+        [SimpleField("hb_rooms_count")]
+        public int HBRoomsCount { get; set; }
+
         [SimpleField("added_date")]
         public DateTime AddedDate { get; set; }
 
@@ -67,5 +73,8 @@ namespace Clarifi.RoomMappingLogger.Scripts
 
         [SimpleField("matching_algorithm")]
         public string MatchingAlgorithm { get; set; }
+
+        [SimpleField("hb_rooms_count")]
+        public int HBRoomsCount { get; set; }
     }
 }

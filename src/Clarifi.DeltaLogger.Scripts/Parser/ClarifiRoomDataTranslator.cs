@@ -24,13 +24,14 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
         {
             return new LoggerScripts.RoomsData()
             {
+                VersionId = roomsData.VersionId,
                 AddedDate = roomsData.AddedDate,
                 ModifiedDate = roomsData.ModifiedDate,
-                Amenities = GetAmenities(roomsData.Amenities),
-                RoomViews = GetRoomViews(roomsData.RoomViews),
-                BedDetails = GetBedDetails(roomsData.BedDetails),
-                Descriptions = GetDescriptions(roomsData.Descriptions),
-                Images = GetImages(roomsData.Images),
+                //Amenities = GetAmenities(roomsData.Amenities),
+                //RoomViews = GetRoomViews(roomsData.RoomViews),
+                //BedDetails = GetBedDetails(roomsData.BedDetails),
+                //Descriptions = GetDescriptions(roomsData.Descriptions),
+                //Images = GetImages(roomsData.Images),
                 ClarifiRoomId = roomsData.ClarifiRoomId,
                 IsDisabled = roomsData.IsDisabled,
                 Name = roomsData.Name,
@@ -39,7 +40,6 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 SupplierHotelId = roomsData.SupplierId,
                 SupplierName = roomsData.SupplierFamily,
                 SupplierRoomId = roomsData.SupplierRoomId,
-                //CategoryId = activityItinerary.Category?.Id,
             };
         }
 
@@ -184,22 +184,23 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
 
             return new LoggerScripts.ClarifiModel()
             {
+                VersionId = clarifiModelData.VersionId,
                 ClarifiHotelId = clarifiModelData.HotelClarifiId,
                 SupplierHotelId = clarifiModelData.SupplierId,
-                //RoomsData = ParseRooms(clarifiModelData.RoomsData),
+                RoomsData = ParseRooms(clarifiModelData.RoomsData),
                 SupplierFamily = clarifiModelData.SupplierFamily,
-                PropertyType = clarifiModelData.PropertyType,
+                //PropertyType = clarifiModelData.PropertyType,
                 HotelName = clarifiModelData.HotelName,
-                AddressLine1 = clarifiModelData.AddressLine1,
-                AddressLine2 = clarifiModelData.AddressLine2,
-                CityCode = clarifiModelData.CityCode,
+                //AddressLine1 = clarifiModelData.AddressLine1,
+                //AddressLine2 = clarifiModelData.AddressLine2,
+                //CityCode = clarifiModelData.CityCode,
                 CityName = clarifiModelData.City,
-                StateCode = clarifiModelData.StateCode,
-                StateName = clarifiModelData.StateName,
+                //StateCode = clarifiModelData.StateCode,
+                //StateName = clarifiModelData.StateName,
                 CountryCode = clarifiModelData.Country,
-                ZipCode = clarifiModelData.ZipCode,
-                Latitude = clarifiModelData.Latitude,
-                Longitude = clarifiModelData.Longitude,
+                //ZipCode = clarifiModelData.ZipCode,
+                //Latitude = clarifiModelData.Latitude,
+                //Longitude = clarifiModelData.Longitude,
                 StarRating = clarifiModelData.Rating,
                 IsUIEnabled = clarifiModelData.IsUIEnabled
             };

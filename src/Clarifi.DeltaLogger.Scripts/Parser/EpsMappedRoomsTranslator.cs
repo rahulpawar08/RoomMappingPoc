@@ -31,7 +31,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 MatchingFields = hotelBedsMappedRoomDetail.MatchingFields,
                 MatchScore = hotelBedsMappedRoomDetail.MatchScore,
                 AppliedStrategyName = hotelBedsMappedRoomDetail.AppliedStrategyName,
-                MatchingAlgorithm = hotelBedsMappedRoomDetail.MatchingAlgorithm
+                MatchingAlgorithm = hotelBedsMappedRoomDetail.MatchingAlgorithm,
+                HBRoomsCount = hotelBedsMappedRoomDetail.HBRoomsCount
             };
         }
         #endregion
@@ -52,8 +53,10 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 EpsHotelName = epsMappedRoomsData.EpsHotelName,
                 AppliedStrategyName = epsMappedRoomsData.AppliedStrategyName,
                 MatchingAlgorithm = epsMappedRoomsData.MatchingAlgorithm,
+                MatchingStatus = epsMappedRoomsData.MatchingStatus.ToString(),
                 AddedDate = epsMappedRoomsData.AddedDate,
-                MappedRooms = GetHotelBedsMappedRoomDetails(epsMappedRoomsData.MappedRooms)
+                MappedRooms = GetHotelBedsMappedRoomDetails(epsMappedRoomsData.MappedRooms),
+                HBRoomsCount = epsMappedRoomsData.HBRoomsCount
             };
         }
         #endregion

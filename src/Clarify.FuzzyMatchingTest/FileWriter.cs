@@ -80,7 +80,7 @@ namespace Clarify.FuzzyMatchingTest
             return hotelBedMappedRoomDetails;
         }
 
-        public void LogSupplierRoomData(ClarifiModel supplierRoomData)
+        public void LogSupplierRoomData(List<ClarifiModel> supplierRoomsData)
         {
             throw new NotImplementedException();
         }

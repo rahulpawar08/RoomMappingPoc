@@ -20,6 +20,9 @@ namespace Clarifi.DeltaLogger.Scripts
         [SimpleField("eps_mapped_rooms_count")]
         public int EPSMappedRoomsCount { get; set; }
 
+        [SimpleField("hb_rooms_count")]
+        public int HBRoomsCount { get; set; }
+
         [SimpleField("mapping_percentage")]
         public double MappingPercentage { get; set; }
     }
@@ -46,8 +49,20 @@ namespace Clarifi.DeltaLogger.Scripts
         [SimpleField("total_mapped_rooms")]
         public int TotalMappedRooms { get; set; }
 
+        [SimpleField("total_rooms_without_matching_rooms")]
+        public int TotalRoomsWithoutMatchingRooms { get; set; }
+
+        [SimpleField("total_rooms_with_nomatch")]
+        public int TotalRoomsWithNoMatch { get; set; }
+
         [SimpleField("overall_mapping_percentage")]
         public double OverallMappingPercentage { get; set; }
+
+        [SimpleField("applied_strategy_name")]
+        public string AppliedStrategyName { get; set; }
+
+        [SimpleField("matching_algorithm")]
+        public string MatchingAlgorithm { get; set; }
     }
 
     [TypeInfo("RoomLevelStats")]
@@ -67,5 +82,17 @@ namespace Clarifi.DeltaLogger.Scripts
 
         [SimpleField("hb_rooms_mapped_count")]
         public int HBRoomsMappedCount { get; set; }
+
+        [SimpleField("hb_rooms_count")]
+        public int HBRoomsCount { get; set; }
+
+        [SimpleField("applied_strategy_name")]
+        public string AppliedStrategyName { get; set; }
+
+        [SimpleField("matching_algorithm")]
+        public string MatchingAlgorithm { get; set; }
+
+        [SimpleField("matching_status")]
+        public string MatchingStatus { get; set; }
     }
 }

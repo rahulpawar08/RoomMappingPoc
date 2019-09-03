@@ -16,29 +16,61 @@ namespace Clarify.FuzzyMatchingTest
             Parallel.ForEach(roomMappingResults, kvPair =>
             {
                 var epsData = epsSupplierData.FirstOrDefault(x => x.HotelClarifiId == kvPair.Key);
-                var epsMappedRooms = new List<EpsMappedRooms>();
-                foreach (var epsRoom in epsData.RoomsData)
+                ConcurrentBag<EpsMappedRooms> epsMappedRooms = new ConcurrentBag<EpsMappedRooms>();
+                Parallel.ForEach(epsData.RoomsData, epsRoom =>
+                    {
+                        var roomsMappedToEpsRoom = kvPair.Value.Where(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
+                        if (roomsMappedToEpsRoom != null)
+                        {
+                            var mappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom);
+
+                            epsMappedRooms.Add(new EpsMappedRooms()
+                            {
+                                VersionId = versionId,
+                                ClarifiHotelId = epsData.HotelClarifiId,
+                                EpsHotelId = epsRoom.SupplierId,
+                                EpsRoomId = epsRoom.SupplierRoomId,
+                                EpsRoomName = epsRoom.Name,
+                                EpsHotelName = epsData.HotelName,
+                                AppliedStrategyName = strategyName,
+                                MatchingAlgorithm = matchingAlgorithm,
+                                AddedDate = DateTime.UtcNow,
+                                MappedRooms = mappedRooms,
+                                MatchingStatus = mappedRooms.Any() ? MatchingStatus.RoomsMatched : MatchingStatus.AlgorithmImprovementNeeded,
+                                HBRoomsCount = kvPair.Value.First().HBRoomsCount
+                            });
+                        }
+                    });
+
+                epsMappedRoomView.Add(kvPair.Key, epsMappedRooms.ToList());
+            });
+
+            var epsSupplierDataWithNoHBRooms = epsSupplierData.Where(x => !epsMappedRoomView.Keys.Contains(x.HotelClarifiId));
+            Parallel.ForEach(epsSupplierDataWithNoHBRooms, epsSupplierDataWithNoHBRoom =>
                 {
-                    var roomsMappedToEpsRoom = kvPair.Value.Where(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
-                    if (roomsMappedToEpsRoom != null)
+                    var epsMappedRooms = new List<EpsMappedRooms>();
+                    foreach (var epsRoom in epsSupplierDataWithNoHBRoom.RoomsData)
                     {
                         epsMappedRooms.Add(new EpsMappedRooms()
                         {
                             VersionId = versionId,
-                            ClarifiHotelId = epsData.HotelClarifiId,
-                            EpsHotelId = epsRoom.SupplierId,
+                            ClarifiHotelId = epsSupplierDataWithNoHBRoom.HotelClarifiId,
+                            EpsHotelId = epsSupplierDataWithNoHBRoom.SupplierId,
                             EpsRoomId = epsRoom.SupplierRoomId,
                             EpsRoomName = epsRoom.Name,
-                            EpsHotelName = epsData.HotelName,
+                            EpsHotelName = epsSupplierDataWithNoHBRoom.HotelName,
                             AppliedStrategyName = strategyName,
                             MatchingAlgorithm = matchingAlgorithm,
+                            MatchingStatus = MatchingStatus.MatchingRoomsNotAvailable,
                             AddedDate = DateTime.UtcNow,
-                            MappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom)
+                            MappedRooms = new List<HotelBedMappedRoomDetail>(),
+                            HBRoomsCount = 0
                         });
                     }
-                }
-                epsMappedRoomView.Add(kvPair.Key, epsMappedRooms);
-            });
+
+                    epsMappedRoomView.Add(epsSupplierDataWithNoHBRoom.HotelClarifiId, epsMappedRooms.ToList());
+                });
+
             return epsMappedRoomView;
         }
 
@@ -116,6 +148,7 @@ namespace Clarify.FuzzyMatchingTest
                 hotelBedMappedRoomDetail.EpsMatchingString = room.EpsMatchingStringForHighestMatch;
                 hotelBedMappedRoomDetail.AppliedStrategyName = room.AppliedStrategyName;
                 hotelBedMappedRoomDetail.MatchingAlgorithm = room.MatchingAlgorithm;
+                hotelBedMappedRoomDetail.HBRoomsCount = room.HBRoomsCount;
                 hotelBedMappedRoomDetails.Add(hotelBedMappedRoomDetail);
             });
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Clarify.FuzzyMatchingTest.Data.Models;
 using System.Collections.Concurrent;
+using System.Threading.Tasks;
 
 namespace Clarify.FuzzyMatchingTest
 {
@@ -56,12 +57,11 @@ namespace Clarify.FuzzyMatchingTest
         private List<RoomMappingResult> ExecuteRoomMappingByRoomType()
         {
             List<RoomMappingResult> roomMappingResults = new List<RoomMappingResult>();
-            foreach (var hotelBedSupplierdata in HotelBedSupplierData)
+            Parallel.ForEach(HotelBedSupplierData, hotelBedSupplierdata =>
             {
                 var epsSupplierData = EpsSupplierData.FirstOrDefault(x => x.HotelClarifiId == hotelBedSupplierdata.HotelClarifiId);
-                foreach (var hotelBedRoom in hotelBedSupplierdata.RoomsData)
+                Parallel.ForEach(hotelBedSupplierdata.RoomsData, hotelBedRoom =>
                 {
-
                     RoomMappingResult roomMappingResult = new RoomMappingResult("HotelBeds", hotelBedSupplierdata.HotelClarifiId, hotelBedSupplierdata.SupplierId, hotelBedRoom.SupplierRoomId, hotelBedRoom.Name);
                     var hotelBedRoomType = HotelBedsKeywordExtractor.GetExtractedString(hotelBedRoom.SupplierRoomId, "roomtype");
                     foreach (var targetRoom in epsSupplierData.RoomsData)
@@ -89,8 +89,8 @@ namespace Clarify.FuzzyMatchingTest
                     roomMappingResult.SetMatchedRoom();
 
                     roomMappingResults.Add(roomMappingResult);
-                }
-            }
+                });
+            });
 
             return roomMappingResults;
         }

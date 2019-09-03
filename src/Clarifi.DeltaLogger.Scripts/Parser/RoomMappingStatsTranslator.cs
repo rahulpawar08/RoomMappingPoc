@@ -19,7 +19,11 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 TotalHotels = roomMappingSummary.TotalHotels,
                 TotalMappedRooms = roomMappingSummary.TotalMappedRooms,
                 TotalRooms = roomMappingSummary.TotalRooms,
-                VersionId = roomMappingSummary.VersionId
+                VersionId = roomMappingSummary.VersionId,
+                AppliedStrategyName = roomMappingSummary.AppliedStrategyName,
+                MatchingAlgorithm = roomMappingSummary.MatchingAlgorithm,
+                TotalRoomsWithNoMatch = roomMappingSummary.TotalRoomsWithNoMatch,
+                TotalRoomsWithoutMatchingRooms = roomMappingSummary.TotalRoomsWithoutMatchingRooms
             };
         }
 
@@ -54,7 +58,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 EPSMappedRoomsCount = hotelLevelStatsData.EPSMappedRoomsCount,
                 EPSRoomsCount = hotelLevelStatsData.EPSRoomsCount,
                 MappingPercentage = hotelLevelStatsData.MappingPercentage,
-                VersionId = hotelLevelStatsData.VersionId
+                VersionId = hotelLevelStatsData.VersionId,
+                HBRoomsCount = hotelLevelStatsData.HBRoomsCount
             };
         }
 
@@ -66,7 +71,11 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 EpsRoomId = roomLevelStatsData.EpsRoomId,
                 EpsRoomName = roomLevelStatsData.EpsRoomName,
                 HBRoomsMappedCount = roomLevelStatsData.HBRoomsMappedCount,
-                VersionId = roomLevelStatsData.VersionId
+                VersionId = roomLevelStatsData.VersionId,
+                AppliedStrategyName = roomLevelStatsData.AppliedStrategyName,
+                MatchingAlgorithm = roomLevelStatsData.MatchingAlgorithm,
+                MatchingStatus = roomLevelStatsData.MatchingStatus,
+                HBRoomsCount = roomLevelStatsData.HBRoomsCount
             };
         }
         #endregion

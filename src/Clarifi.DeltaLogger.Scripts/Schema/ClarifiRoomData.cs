@@ -113,6 +113,9 @@ namespace Clarifi.RoomMappingLogger.Scripts
     [TypeInfo("rooms_data")]
     public class RoomsData : LogEntryBase
     {
+        [SimpleField("version_id")]
+        public string VersionId { get; set; }
+
         [SimpleField("clarifi_roomid")]
         public int ClarifiRoomId { get; set; }
 
@@ -128,23 +131,23 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("name")]
         public string Name { get; set; }
 
-        [NestedField()]
-        public List<Description> Descriptions { get; set; }
+        //[NestedField()]
+        //public List<Description> Descriptions { get; set; }
 
-        [NestedField()]
-        public List<Image> Images { get; set; }
+        //[NestedField()]
+        //public List<Image> Images { get; set; }
 
-        [NestedField()]
-        public List<Amenity> Amenities { get; set; }
+        //[NestedField()]
+        //public List<Amenity> Amenities { get; set; }
 
-        [NestedField()]
-        public List<BedDetail> BedDetails { get; set; }
+        //[NestedField()]
+        //public List<BedDetail> BedDetails { get; set; }
+
+        //[NestedField()]
+        //public List<RoomView> RoomViews { get; set; }
 
         [SimpleField("square_footage")]
         public string SquareFootage { get; set; }
-
-        [NestedField()]
-        public List<RoomView> RoomViews { get; set; }
 
         [SimpleField("smoking_indicator")]
         public string SmokingIndicator { get; set; }
@@ -175,53 +178,56 @@ namespace Clarifi.RoomMappingLogger.Scripts
     [TypeInfo("clarifi_model")]
     public class ClarifiModel : LogEntryBase
     {
+        [SimpleField("version_id")]
+        public string VersionId { get; set; }
+
         [SimpleField("clarifi_hotelid")]
         public string ClarifiHotelId { get; set; }
 
         [SimpleField("supplier_hotelid")]
         public string SupplierHotelId { get; set; }
 
-        //[NestedField()]
-        //public List<RoomsData> RoomsData { get; set; }
+        [NestedField()]
+        public List<RoomsData> RoomsData { get; set; }
 
         [SimpleField("supplier_name")]
         public string SupplierFamily { get; set; }
 
-        [SimpleField("property_type")]
-        public string PropertyType { set; get; }
+        //[SimpleField("property_type")]
+        //public string PropertyType { set; get; }
 
         [SimpleField("hotel_name")]
         public string HotelName { get; set; }
 
-        [SimpleField("address_line1")]
-        public string AddressLine1 { set; get; }
+        //[SimpleField("address_line1")]
+        //public string AddressLine1 { set; get; }
 
-        [SimpleField("address_line2")]
-        public string AddressLine2 { set; get; }
+        //[SimpleField("address_line2")]
+        //public string AddressLine2 { set; get; }
 
-        [SimpleField("city_code")]
-        public string CityCode { set; get; }
+        //[SimpleField("city_code")]
+        //public string CityCode { set; get; }
 
         [SimpleField("city_name")]
         public string CityName { set; get; }
 
-        [SimpleField("state_code")]
-        public string StateCode { set; get; }
+        //[SimpleField("state_code")]
+        //public string StateCode { set; get; }
 
-        [SimpleField("state_name")]
-        public string StateName { set; get; }
+        //[SimpleField("state_name")]
+        //public string StateName { set; get; }
 
         [SimpleField("country_code")]
         public string CountryCode { set; get; }
 
-        [SimpleField("zip_code")]
-        public string ZipCode { get; set; }
+        //[SimpleField("zip_code")]
+        //public string ZipCode { get; set; }
 
-        [SimpleField("latitude")]
-        public double Latitude { get; set; }
+        //[SimpleField("latitude")]
+        //public double Latitude { get; set; }
 
-        [SimpleField("longitude")]
-        public double Longitude { get; set; }
+        //[SimpleField("longitude")]
+        //public double Longitude { get; set; }
 
         [SimpleField("star_rating")]
         public double StarRating { get; set; }
