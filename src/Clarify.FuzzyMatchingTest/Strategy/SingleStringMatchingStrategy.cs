@@ -134,7 +134,8 @@ namespace Clarify.FuzzyMatchingTest
     public enum MatchingStatus
     {
         RoomsMatched,
-        MatchingRoomsNotAvailable,
-        AlgorithmImprovementNeeded
+        HBRoomsNotAvailable,
+        AlgorithmImprovementNeeded,
+        EPSRoomsNotAvailable
     }
 }

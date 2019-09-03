@@ -72,8 +72,8 @@ namespace Clarify.FuzzyMatchingTest
 
         private void PopulateInputData()
         {
-            //string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
-            string[] filePaths = Directory.GetFiles(@"C:\logs\ExportedRooms\ExportedRooms");
+            string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\Input");
+            //string[] filePaths = Directory.GetFiles(@"C:\logs\ExportedRooms\ExportedRooms");
 
             Parallel.ForEach(filePaths.Where(n => n.Contains("EPS")), epsFileName =>
             {

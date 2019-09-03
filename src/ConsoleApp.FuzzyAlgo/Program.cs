@@ -105,6 +105,9 @@ namespace ConsoleApp.FuzzyAlgo
             {
                 if (kvp.Key != null)
                 {
+                    string appliedStrategyName = string.Empty;
+                    string matchingAlgorithm = string.Empty;
+
                     int hbRoomsCount = 0;
                     foreach (var map in kvp.Value)
                     {
@@ -112,17 +115,20 @@ namespace ConsoleApp.FuzzyAlgo
                             map.EpsRoomId, map.EpsRoomName, map.MappedRooms.Count, map.AppliedStrategyName,
                             map.MatchingAlgorithm, map.MatchingStatus.ToString(), map.HBRoomsCount));
 
-                        if (map.MatchingStatus == MatchingStatus.MatchingRoomsNotAvailable)
+                        if (map.MatchingStatus == MatchingStatus.HBRoomsNotAvailable)
                             totalRoomsWithoutMatchingRooms++;
 
                         hbRoomsCount = map.HBRoomsCount;
+                        appliedStrategyName = map.AppliedStrategyName;
+                        matchingAlgorithm = map.MatchingAlgorithm;
                     }
 
                     int totalCount = kvp.Value.Count;
                     int mappedRoomCount = kvp.Value.Where(m => m.MappedRooms.Count > 0).Count();
                     double mappedPercentage = totalCount != 0 ? (double)(mappedRoomCount * 100) / totalCount : 0;
 
-                    hotelLevelStats.Add(new DataModels.HotelLevelStats(versionId, kvp.Key, totalCount, mappedRoomCount, mappedPercentage, hbRoomsCount));
+                    hotelLevelStats.Add(new DataModels.HotelLevelStats(versionId, kvp.Key, totalCount,
+                        mappedRoomCount, mappedPercentage, hbRoomsCount, appliedStrategyName, matchingAlgorithm));
 
                     if (totalCount == 0)
                         zeroRoomCount++;
@@ -157,5 +163,6 @@ namespace ConsoleApp.FuzzyAlgo
             matchingFields.ForEach(f => commaSeperatedFields.Append(f + ", "));
             return commaSeperatedFields.ToString().Trim(',');
         }
+        
     }
 }

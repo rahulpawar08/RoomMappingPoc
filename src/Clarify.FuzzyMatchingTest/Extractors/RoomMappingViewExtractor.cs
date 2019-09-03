@@ -61,7 +61,7 @@ namespace Clarify.FuzzyMatchingTest
                             EpsHotelName = epsSupplierDataWithNoHBRoom.HotelName,
                             AppliedStrategyName = strategyName,
                             MatchingAlgorithm = matchingAlgorithm,
-                            MatchingStatus = MatchingStatus.MatchingRoomsNotAvailable,
+                            MatchingStatus = MatchingStatus.HBRoomsNotAvailable,
                             AddedDate = DateTime.UtcNow,
                             MappedRooms = new List<HotelBedMappedRoomDetail>(),
                             HBRoomsCount = 0

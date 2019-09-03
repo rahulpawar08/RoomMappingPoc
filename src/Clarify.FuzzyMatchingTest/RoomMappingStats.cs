@@ -8,13 +8,16 @@
         public int EPSMappedRoomsCount { get; set; }
         public int HBRoomsCount { get; set; }
         public double MappingPercentage { get; set; }
+        public string AppliedStrategyName { get; set; }
+        public string MatchingAlgorithm { get; set; }
+        public string MatchingStatus { get; set; }
 
         public HotelLevelStats()
         {
         }
 
         public HotelLevelStats(string versionId, string clarifiHotelId, int epsRoomsCount,
-            int epsMappedRoomsCount, double mappingPercentage,int hbRoomsCount)
+            int epsMappedRoomsCount, double mappingPercentage, int hbRoomsCount, string appliedStrategyName, string matchingAlgorithm)
         {
             VersionId = versionId;
             ClarifiHotelId = clarifiHotelId;
@@ -22,6 +25,21 @@
             EPSMappedRoomsCount = epsMappedRoomsCount;
             MappingPercentage = mappingPercentage;
             HBRoomsCount = hbRoomsCount;
+            MatchingAlgorithm = matchingAlgorithm;
+            AppliedStrategyName = appliedStrategyName;
+            SetMatchingStatus();
+        }
+
+        private void SetMatchingStatus()
+        {
+            if (EPSRoomsCount == 0)
+                MatchingStatus = Clarify.FuzzyMatchingTest.MatchingStatus.EPSRoomsNotAvailable.ToString();
+            else if (HBRoomsCount == 0)
+                MatchingStatus = Clarify.FuzzyMatchingTest.MatchingStatus.HBRoomsNotAvailable.ToString();
+            else if (HBRoomsCount == EPSMappedRoomsCount)
+                MatchingStatus = Clarify.FuzzyMatchingTest.MatchingStatus.RoomsMatched.ToString();
+            else
+                MatchingStatus = Clarify.FuzzyMatchingTest.MatchingStatus.AlgorithmImprovementNeeded.ToString();
         }
     }
 

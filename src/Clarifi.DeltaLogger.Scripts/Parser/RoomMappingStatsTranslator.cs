@@ -48,7 +48,7 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
         }
         #endregion
 
-        #region Priavte Methods
+        #region Private Methods
 
         private static HotelLevelStats GetHotelLevelStats(DataModels.HotelLevelStats hotelLevelStatsData)
         {
@@ -59,7 +59,10 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 EPSRoomsCount = hotelLevelStatsData.EPSRoomsCount,
                 MappingPercentage = hotelLevelStatsData.MappingPercentage,
                 VersionId = hotelLevelStatsData.VersionId,
-                HBRoomsCount = hotelLevelStatsData.HBRoomsCount
+                HBRoomsCount = hotelLevelStatsData.HBRoomsCount,
+                MatchingAlgorithm = hotelLevelStatsData.MatchingAlgorithm,
+                AppliedStrategyName = hotelLevelStatsData.AppliedStrategyName,
+                MatchingStatus = hotelLevelStatsData.MatchingStatus
             };
         }
 

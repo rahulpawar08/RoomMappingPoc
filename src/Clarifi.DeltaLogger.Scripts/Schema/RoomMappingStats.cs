@@ -25,6 +25,15 @@ namespace Clarifi.DeltaLogger.Scripts
 
         [SimpleField("mapping_percentage")]
         public double MappingPercentage { get; set; }
+
+        [SimpleField("applied_strategy_name")]
+        public string AppliedStrategyName { get; set; }
+
+        [SimpleField("matching_algorithm")]
+        public string MatchingAlgorithm { get; set; }
+
+        [SimpleField("matching_status")]
+        public string MatchingStatus { get; set; }
     }
 
 
