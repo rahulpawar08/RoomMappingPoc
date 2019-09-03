@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ConsoleApp.FuzzyAlgo": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Clarifi\\RoomMapping\\ExportedRooms"
+    }
+  }
+}
