@@ -56,6 +56,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
     {
         public string VersionId { get; set; }
         public int ClarifiRoomId { get; set; }
+        public string ClarifiHotelId { get; set; }
         public string SupplierFamily { get; set; }
         public string SupplierId { get; set; }
         public string SupplierRoomId { get; set; }
@@ -152,6 +153,7 @@ namespace Clarify.FuzzyMatchingTest.Data.Models
         //public double Longitude { get; set; }
         public double Rating { get; set; }
         public bool IsUIEnabled { get; set; }
+        public int RoomsCount { get; set; }
         // public Hotel hotel { get; set; }
     }
 }

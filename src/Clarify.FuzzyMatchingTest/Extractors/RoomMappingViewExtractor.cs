@@ -13,37 +13,37 @@ namespace Clarify.FuzzyMatchingTest
         public Dictionary<string, List<EpsMappedRooms>> GetEpsMappedRooms(ConcurrentBag<ClarifiModel> epsSupplierData, Dictionary<string, ConcurrentBag<RoomMappingResult>> roomMappingResults, string versionId, string strategyName, string matchingAlgorithm)
         {
             Dictionary<string, List<EpsMappedRooms>> epsMappedRoomView = new Dictionary<string, List<EpsMappedRooms>>();
-            Parallel.ForEach(roomMappingResults, kvPair =>
+            foreach (var kvPair in roomMappingResults)
             {
                 var epsData = epsSupplierData.FirstOrDefault(x => x.HotelClarifiId == kvPair.Key);
                 ConcurrentBag<EpsMappedRooms> epsMappedRooms = new ConcurrentBag<EpsMappedRooms>();
-                Parallel.ForEach(epsData.RoomsData, epsRoom =>
+                foreach (var epsRoom in epsData.RoomsData)
+                {
+                    var roomsMappedToEpsRoom = kvPair.Value.Where(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
+                    if (roomsMappedToEpsRoom != null)
                     {
-                        var roomsMappedToEpsRoom = kvPair.Value.Where(r => r.MostMatchedRoomId == epsRoom.SupplierRoomId);
-                        if (roomsMappedToEpsRoom != null)
-                        {
-                            var mappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom);
+                        var mappedRooms = GetMappedRooms(epsRoom, roomsMappedToEpsRoom);
 
-                            epsMappedRooms.Add(new EpsMappedRooms()
-                            {
-                                VersionId = versionId,
-                                ClarifiHotelId = epsData.HotelClarifiId,
-                                EpsHotelId = epsRoom.SupplierId,
-                                EpsRoomId = epsRoom.SupplierRoomId,
-                                EpsRoomName = epsRoom.Name,
-                                EpsHotelName = epsData.HotelName,
-                                AppliedStrategyName = strategyName,
-                                MatchingAlgorithm = matchingAlgorithm,
-                                AddedDate = DateTime.UtcNow,
-                                MappedRooms = mappedRooms,
-                                MatchingStatus = mappedRooms.Any() ? MatchingStatus.RoomsMatched : MatchingStatus.AlgorithmImprovementNeeded,
-                                HBRoomsCount = kvPair.Value.First().HBRoomsCount
-                            });
-                        }
-                    });
+                        epsMappedRooms.Add(new EpsMappedRooms()
+                        {
+                            VersionId = versionId,
+                            ClarifiHotelId = epsData.HotelClarifiId,
+                            EpsHotelId = epsRoom.SupplierId,
+                            EpsRoomId = epsRoom.SupplierRoomId,
+                            EpsRoomName = epsRoom.Name,
+                            EpsHotelName = epsData.HotelName,
+                            AppliedStrategyName = strategyName,
+                            MatchingAlgorithm = matchingAlgorithm,
+                            AddedDate = DateTime.UtcNow,
+                            MappedRooms = mappedRooms,
+                            MatchingStatus = mappedRooms.Any() ? MatchingStatus.RoomsMatched : MatchingStatus.AlgorithmImprovementNeeded,
+                            HBRoomsCount = kvPair.Value.First().HBRoomsCount
+                        });
+                    }
+                };
 
                 epsMappedRoomView.Add(kvPair.Key, epsMappedRooms.ToList());
-            });
+            };
 
             var epsSupplierDataWithNoHBRooms = epsSupplierData.Where(x => !epsMappedRoomView.Keys.Contains(x.HotelClarifiId));
             Parallel.ForEach(epsSupplierDataWithNoHBRooms, epsSupplierDataWithNoHBRoom =>

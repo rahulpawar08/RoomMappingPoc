@@ -40,6 +40,7 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 SupplierHotelId = roomsData.SupplierId,
                 SupplierName = roomsData.SupplierFamily,
                 SupplierRoomId = roomsData.SupplierRoomId,
+                ClarifiHotelId = roomsData.ClarifiHotelId
             };
         }
 
@@ -202,7 +203,8 @@ namespace Clarifi.DeltaLogger.Scripts.Parser
                 //Latitude = clarifiModelData.Latitude,
                 //Longitude = clarifiModelData.Longitude,
                 StarRating = clarifiModelData.Rating,
-                IsUIEnabled = clarifiModelData.IsUIEnabled
+                IsUIEnabled = clarifiModelData.IsUIEnabled,
+                RoomsCount = clarifiModelData.RoomsCount
             };
         }
         #endregion

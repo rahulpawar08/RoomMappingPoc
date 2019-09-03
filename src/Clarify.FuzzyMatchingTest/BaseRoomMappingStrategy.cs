@@ -61,8 +61,10 @@ namespace Clarify.FuzzyMatchingTest
                 model.SupplierFamily = supplier;
                 model.VersionId = versionId;
                 model.HotelName = Regex.Replace((model.HotelName ?? string.Empty), "\"", string.Empty, RegexOptions.IgnoreCase);
+                model.RoomsCount = model.RoomsData.Count;
                 foreach (var roomData in model.RoomsData)
                 {
+                    roomData.ClarifiHotelId = model.HotelClarifiId;
                     roomData.VersionId = versionId;
                     roomData.Name = Regex.Replace((roomData.Name ?? string.Empty), "\"", string.Empty, RegexOptions.IgnoreCase);
                 }

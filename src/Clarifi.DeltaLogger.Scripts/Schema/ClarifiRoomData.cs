@@ -119,6 +119,9 @@ namespace Clarifi.RoomMappingLogger.Scripts
         [SimpleField("clarifi_roomid")]
         public int ClarifiRoomId { get; set; }
 
+        [SimpleField("clarifi_hotelid")]
+        public string ClarifiHotelId { get; set; }
+
         [SimpleField("supplier_name")]
         public string SupplierName { get; set; }
 
@@ -231,6 +234,9 @@ namespace Clarifi.RoomMappingLogger.Scripts
 
         [SimpleField("star_rating")]
         public double StarRating { get; set; }
+
+        [SimpleField("rooms_count")]
+        public int RoomsCount { get; set; }
 
         [SimpleField("is_ui_enabled")]
         public bool IsUIEnabled { get; set; }
